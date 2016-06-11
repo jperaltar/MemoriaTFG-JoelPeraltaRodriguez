@@ -43,18 +43,6 @@
 \renewcommand{\refname}{Bibliograf\'ia}  %% Renombrando
 \renewcommand{\appendixname}{Ap\'endice}
 
-\makeatletter
-% we use \prefix@<level> only if it is defined
-\renewcommand{\@seccntformat}[1]{%
-  \ifcsname prefix@#1\endcsname
-    \csname prefix@#1\endcsname
-  \else
-    \csname the#1\endcsname\quad
-  \fi}
-% define \prefix@section
-\newcommand\prefix@subsubsection{\thesubsubsection}
-\makeatother
-
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % PORTADA
 
@@ -238,14 +226,11 @@ just before submitting.
 \label{sec:intro} % etiqueta para poder referenciar luego en el texto con ~\ref{sec:intro}
 \pagenumbering{arabic} % para empezar la numeración de página con números
 
-En este proyecto se ha realizado un an\'alisis del ecosistema de proyectos de
-software libre que podemos encontrar en la red, centrandose especialmente en
-la plataforma Github. Mediante este an\'alisis se ha intentado dar a conocer las
-caracter\'isticas de este entorno adem\'as de determinar las peculiaridades que
-aportan los datos obtenidos a la formaci\'on y desarrollo del Free Open Source Software.
-
-A continuaci\'on, para una mejor comprensi\'on del proyecto, se explicar\'an el
-contexto del mismo, su estructura y las motivaciones personales para realizarlo.
+En este proyecto se han analizado y validado de manera general las caracter\'isticas de
+distintos proyectos FOSS, as\'i como la colaboraci\'on de los distintos participantes
+en dichos proyectos. Para una mejor comprensi\'on del problema, en esta introducci\'on
+se proceder\'a a explicar el contexto del proyecto, las motivaciones personales para
+realizarlo y la estructura del mismo.
 
 \section{Contexto}
 \label{sec:contexto}
@@ -257,22 +242,13 @@ diferentes proyectos de software libre y de sus desarrolladores.
 
 Con la obtenci\'on de la informaci\'on presente en estos proyectos, se pretende
 realizar una comparativa de los diferentes tipos de software libre que se est\'an
-desarrollando en la actualidad, adem\'as de sus caracter\'isticas en cuanto a
-copyrights y licencias. De esta manera se podr\'an entender mejor las cualidades
-que ha de tener un determinado software para ser libre y abierto, y para poder
-progresar y obtener mayor relevancia en el mundo del Free Open Source Software.
+desarrollando en la actualidad, y tambi\'en de los desarrolladores que participan
+en ellos y las herramientas que utilizan.
 
-Esta informaci\'on legal, aunque secundaria, puede suponer un punto clave para
-un determinado proyecto, puesto que en la comunidad Free Open Source, un aspecto
-muy importante del software debe ser su libertad de uso, acceso al c\'odigo y distribuci\'on
-y modificaci\'on del mismo.
-
-Este proceso de an\'alisis se realiza en el contexto de una aplicaci\'on
+Adem\'as, el proceso de an\'alisis se realiza en el contexto de una aplicaci\'on
 web, por tanto, el resultado del mismo podr\'a ser accesible a m\'ultiples usuarios
 que busquen el tipo de proyecto que se est\'a realizando en la actualidad, o a
-colaboradores activos de proyectos de software libre, o caracter\'isticas de distintos
-proyectos que les permitan tomar conciencia de la importancia de que el nuevo software
-que est\'an desarrollando sea libre y accesible para todo el mundo.
+colaboradores activos de proyectos de software libre.
 
 %\subsection{Estilo}
 %\label{subsec:estilo}
@@ -361,7 +337,7 @@ Para una mejor lectura, se desglosa a continuaci\'on la estructura de este docum
   \item \textbf{7. Ap\'endices.} Secci\'on en la que se muestra cualquier informaci\'on
   adicional para la adecuada comprensi\'on de la memoria.
 
-  \item \textbf{8. Bibliograf\'ia.} Lista de fuentes de informacion en las cuales
+  \item \textbf{8. Bibliograf\'ia.} Lista de fuentes de informaci\'on en las cuales
   se basa la este documento.
 \end{itemize}
 
@@ -394,33 +370,30 @@ secundarios que se describir\'an a continuaci\'on:
 
 \begin{itemize}
 
-\item Familiarizarse con la herramienta Scancode Toolkit que servir\'a para
-analizar proyectos desde la terminal de Unix y posteriormente analizar la
+\item Familiarizaci\'on con la herramienta Scancode Toolkit que servir\'a para
+analizar proyectos desde la terminal de Unix y el posterior an\'alisis de la
 infomaci\'on devuelta por dicha herramienta.
 
-\item Inicializar el proyecto Django/Python que albergar\'a la aplicaci\'on
+\item Inicializaci\'on del proyecto Django/Python que albergar\'a la aplicaci\'on
 web en la que se engloba el an\'alisis de proyectos mencionado anteriormente.
 
-\item Adaptar la herramienta para ser usada como un m\'odulo de Python
+\item Adaptaci\'on de la herramienta para ser usada como un m\'odulo de Python
 y poder tener mayor versatilidad al analizar proyectos en distintos formatos.
 
-\item Desarrollar una API REST cuyos recursos servir\'an para analizar proyectos
-y devolver los resultados en un formato facilmente representable en el navegador.
+\item Desarrollo de una API REST cuyos recursos servir\'an para analizar proyectos
+y devolver los resultados en un formato f\'acilmente representable en el navegador.
 
-\item Crear los modelos de la base de datos y almacenar los
+\item Creaci\'on de los modelos de la base de datos y almacenamiento de los
 primeros proyectos FOSS que ser\'an posteriormente representados.
 
-\item Montar la estructura del framework web AngularJS para realizar de manera
+\item Montaje de la estructura del framework web AngularJS para realizar de manera
 correcta y ordenada la representaci\'on de los datos obtenidos de la API.
 
-\item Representar los datos obtenidos de la API REST mediante la librer\'ia
+\item Representaci\'on de los datos obtenidos de la API REST mediante la librer\'ia
 nvd3 basada en d3.js en diferentes gr\'aficos.
 
-\item Corregir la est\'etica de la p\'agina, adem\'as de distintos problemas de
+\item Correcci\'on est\'etica de la p\'agina, adem\'as de distintos problemas de
 adaptaci\'on entre el back-end (Python) y el front-end (JavaScript).
-
-\item Analizar mayor n\'umero de proyectos para obtener mayor n\'umero de datos
-que ayuden a sacar conclusiones del entorno Open Source.
 
 \end{itemize}
 
@@ -491,7 +464,7 @@ de libre acceso al p\'ublico.
 
 Por otro lado, la iniciativa Open Source se centra menos en las caracter\'isticas
 \'eticas del software libre, y m\'as en las t\'ecnicas y econ\'omicas. Sin embargo,
-son muy pocos los proyectos de software que siendo reconocidos por la Ola Open
+son muy pocos los proyectos de software que siendo reconocidos por la Open
 Source Initiative, no sea considerado Free Software. Por esta raz\'on se suele
 utilizar el t\'ermino Free Open Source Software.
 
@@ -499,7 +472,7 @@ utilizar el t\'ermino Free Open Source Software.
 \label{sec:python}
 
 Python es un lenguaje de programaci\'on multiparadigma, al permitir la programaci\'on
-orientada a objetos, declarativa y funcional. Es interpretado, por no requerir
+orienteda a objetos, declarativa y funcional. Es interpretado, por no requerir
 compilaci\'on, con tipado din\'amico y multiplataforma. ~\cite{python}
 
 Este lenguaje fue publicado por Guido van Rossum en 1991 en los Pa\'ises Bajos
@@ -542,13 +515,13 @@ de una manera estructurada, concisa y abordable para programadores de cualquier
 nivel.
 
 Estas cualidades adem\'as de la sencillez de interacci\'on con bases de datos
-relacionales supusieron un punto clave para la eleccion de Django como
+relacionales supusieron un punto clave para la elecci\'on de Django como
 framework sobre el que desarrollar la aplicaci\'on web en la que se basa este proyecto.
 
 Para la realizaci\'on del mismo se ha utilizado la versi\'on 1.9 de Django, por una
 mayor sencillez y una mejor interoperabilidad con las bases de datos relacionales
 como puede ser MySQL. Esto supone como ya se ha comentado anteriormente, que existan
-restricciones de compatibilidad de est\'a versi\'on con las versiones 3.X de Python.
+restricciones de compatibilidad de esta versi\'on con las versiones 3.X de Python.
 
 \subsection{Scancode Toolkit}
 \label{subsec:scancode}
@@ -575,7 +548,7 @@ son la obtenci\'on del lenguaje en el que est\'an escritos, el n\'umero de linea
 
 Esta librer\'ia Python sirve como interacci\'on de alto nivel con repositorios git.
 
-La interacci\'on de esesta librer\'ia con los repositorios abarca desde la funcionalidad
+La interacci\'on de esta librer\'ia con los repositorios abarca desde la funcionalidad
 de clonar un repositorio a obtener el 'blame' de un fichero dentro del mismo.
 Y precisamente estas dos funcionalidades son las que se han utilizado en este proyecto.
 
@@ -662,7 +635,7 @@ mejor al uso que se dar\'a a los datos recogidos.
 \label{subsec:mysql}
 
 MySQL ~\cite{mysql} es un sistema de gesti\'on de bases de datos relacionales multiplataforma,
-desarrollado en C y C++ bajo una licencia dual GPL/Licencia Comercial de Oracle
+dessarrollado en C y C++ bajo una licencia dual GPL/Licencia Comercial de Oracle
 Corporation y es considerada la base de datos relacional open source m\'as popular del mundo.
 
 \begin{figure}[H]
@@ -675,7 +648,7 @@ cualidad esencial para la gesti\'on de p\'aginas web con representaci\'on de dat
 din\'amicos.
 
 Adem\'as, MySQL soporta una gran cantidad de tipos diferentes para almacenar datos
-y al est\'ar tan extendido, tiene multiples APIs para interactuar con la base de datos desde
+y al est\'ar tan extendido, tiene m\'ultiples APIs para interactuar con la base de datos desde
 diferentes lenguajes de programaci\'on.
 
 Estas cualidades adem\'as de se escalabilidad, y su facilidad de uso utilizando Django
@@ -692,7 +665,7 @@ de usuario. Esas tecnolog\'ias se pasan a describir en las siguientes secciones.
 \subsection{JavaScript}
 \label{subsec:js}
 
-JavaScript ~\cite{js} es un lenguaje de programaci\'on interpretado, dialecto del estandar
+JavaScript ~\cite{js} es un lenguaje de programaci\'on interpretado, dialecto del est\'andar
 ECMAScript y fue desarrollado por Brendan Eich, trabajador de Netscape en 1995.
 Este lenguaje es orientado a objetos, imperativo y con tipado d\'ebil y din\'amico.
 
@@ -705,11 +678,11 @@ Este lenguaje es usado normalmente en el lado del cliente, como parte del c\'odi
 utilizado por el navegador, permitiendo la realizaci\'on de p\'aginas web din\'amicas
 e interfaces de usuario.
 
-JavaScript es el \'unico lenguaje apoyado comunmente por todos los navegadores modernos.
+JavaScript es el \'unico lenguaje apoyado com\'unmente por todos los navegadores modernos.
 Por esta raz\'on, es el m\'as utilizado en el desarrollo de aplicaciones web en el
 lado del cliente, y el que se utiliza en este proyecto.
 
-\subsubsection*{AngularJS}
+\subsubsection{AngularJS}
 \label{subsec:angularjs}
 
 AngularJS ~\cite{angular} es un framework web abierto de JavaScript, mantenido por Google y que
@@ -741,7 +714,7 @@ del mismo.
     \label{fig:2waydatabinding}
 \end{figure}
 
-\subsubsection*{D3.js}
+\subsubsection{D3.js}
 \label{subsec:d3}
 
 La librer\'ia de JavaScript D3 ~\cite{d3}, llamada as\'i por las siglas Data-Driven Documents,
@@ -761,9 +734,9 @@ tipo de datos, que adem\'as se actualizan conforme estos datos vayan cambiando.
 
 Para la realizaci\'on de este proyecto, juegan un papel importante tecnolog\'ias
 como HTML5 o CSS3, que permiten la creaci\'on de una interfaz de usuario llamativa
-y facil para el correcto funcionamiento de la aplicaci\'on web.
+y f\'acil para el correcto funcionamiento de la aplicaci\'on web.
 
-\subsubsection*{HTML5}
+\subsubsection{HTML5}
 \label{subsec:html5}
 
 HTML5 ~\cite{html5} es un lenguaje de marcado que nos permite realizar plantillas en las que
@@ -778,18 +751,18 @@ Adem\'as el DOM de la p\'agina, que es una representaci\'on en arbol de los dist
 elementos de la plantilla HTML, nos permite modificar mediante distintas herramientas
 como puede ser Angular, el aspecto y organizaci\'on de nuestra interfaz.
 
-\subsubsection*{CSS3}
+\subsubsection{CSS3}
 \label{subsec:css3}
 
 Como complemento a HTML, tenemos CSS, que es un lenguaje creado para definir la presentaci\'on
-y esy estilo de documentos HTML o XML.
+y estilo de documentos HTML o XML.
 
 \begin{figure}[H]
   \centering
   \includegraphics[width=3cm, keepaspectratio]{img/css3-logo}
 \end{figure}
 
-Mediante este lenguaje definiremos el estilo de nuestra interfaz de usuario, dotandola
+Mediante este lenguaje definiremos el estilo de nuestra interfaz de usuario, dot\'andola
 de las caracter\'isticas deseadas para hacerla m\'as atractiva al usuario.
 
 \subsection{Bootstrap}
@@ -836,7 +809,7 @@ Por \'ultimo y para sintetizar, en esta secci\'on explicaremos las interacciones
 entre las tecnolog\'ias anteriormente descritas.
 
 Tal y como se muestra en la figura~\ref{fig:interaction}, al acceder un usuario
-a la p\'agina web y realizar el an\'alisi o la busqueda de ciertos datos, se enviar\'a
+a la p\'agina web y realizar el an\'alisi o la b\'usqueda de ciertos datos, se enviar\'a
 una petici\'on desde el cliente Angular hasta el servidor Django, que tras obtener
 los datos de la base de datos, los devolver\'a en la respuesta al cliente, y este
 actualizar\'a mediante el two way data binding los datos contenidos en los gr\'aficos
@@ -879,7 +852,6 @@ en funci\'on de los recursos a los cuales se acceda, los resultados analizados e
 momento de la petici\'on o almacenados en la base de datos, del proyecto FOSS requerido
 por el usuario. Adem\'as permitir\'a la obtenci\'on de los datos globales de la aplicaci\'on,
 as\'i como los correspondientes a un usuario y aquellos relacionados con una determinada
-inada
 inforamci\'on legal.
 
 De los resultados devueltos por el servidor se servir\'a el c\'odigo del navegador
@@ -937,7 +909,7 @@ Estos recursos son los siguientes:
 
   \item \textbf{/legal}: Al acceder a este recurso, se podr\'an enviar una licencia
   o un copyright por los cual se quieran filtrar los ficheros almacenados en la
-  base de datos, devolviendo en la respuesta todos los fihceros que contengan
+  base de datos, devolviendo en la respuesta todos los ficheros que contengan
   esta informaci\'on legal.
 
 \end{itemize}
@@ -948,7 +920,7 @@ Estos recursos son los siguientes:
 A continuaci\'on se describir\'a el proceso de an\'alisis de los distintos proyectos
 as\'i como la implementaci\'on de dicho an\'alisis.
 
-\subsubsection*{Proceso}
+\subsubsection{Proceso}
 \label{subsubsec:proceso}
 
 El an\'alisis se realizar\'a al acceder al recurso /analyze
@@ -957,7 +929,7 @@ fecha en la que fue almacenado sea m\'as reciente que la fecha de \'ultima
 modificaci\'on del proyecto.
 
 Si se cumplen estas dos condiciones, en la vista correspondiente al recurso /analyze
-se utilizar\'a la librer\'ia GitPython para clonar el repositorio del proyecto
+se utilizar\'a la librer\'ia GitPython para clonar el repositiorio del proyecto
 a analizar, para posteriormente utilizar la herramienta Scancode Toolkit sobre la
 carpeta en la que este proyecto fue clonado.
 
@@ -965,7 +937,7 @@ Mediante esta herramienta finalmente se obtendr\'a la informaci\'on legal de cad
 fichero, y mediante la librer\'ia GitPython y la API de Github se obtendr\'a otra informaci\'on como
 pueden ser los contribuidores y las contribuciones de cada uno de ellos.
 
-\subsubsection*{Implementaci\'on}
+\subsubsection{Implementaci\'on}
 \label{subsubsec:implementacion}
 
 Para implementar este proceso se har\'a uso de una funci\'on que con la herramienta
@@ -983,7 +955,7 @@ que ser\'an posteriormente parseadas para obtener el autor de cada una y la bibl
 Pygments que a partir del contenido de cada fichero, determinar\'a el lenguaje en
 que est\'a programado en base a su sintaxis.
 
-\subsubsection*{Otras consideraciones}
+\subsubsection{Otras consideraciones}
 \label{subsubsec:consideraciones}
 
 Para el correcto funcionamiento de la aplicaci\'on fueron necesarias ciertas modificaciones
@@ -992,7 +964,7 @@ sobre la herramienta Scancode Toolkit:
 \begin{itemize}
 \item El funcionamiento por defecto de Scancode Toolkit carga la lista de reglas
 y licencias en cada an\'alisis. En este caso, al tratarse de una aplicaci\'on web,
-esta funcionalidad no es viable, por lo tanto se tuvo que modifical el
+esta funcionalidad no es viable, por lo tanto se tuvo que modificar el
 funcionamiento de la herramienta para que la carga de licencias se realice
 nada m\'as arrancar la aplicaci\'on web, almacenando despu\'es la lista en el
 servidor, y evitando as\'i que se tengan que realizar cargas posteriores.
@@ -1001,7 +973,7 @@ servidor, y evitando as\'i que se tengan que realizar cargas posteriores.
 el contenido de los distintos ficheros al comenzar el proceso de an\'alisis,
 evitando as\'i, las distintas lecturas que habr\'ia que realizar por defecto en el
 funcionamiento de las herramientas utilizadas. De esta forma, para evitar estas
-m\'ultiple lecturas, se modific\'o la herramienta Scancode Toolkit para poder
+m\'ultiples lecturas, se modific\'o la herramienta Scancode Toolkit para poder
 analizar el contenido de cada fichero directamente en lugar de leerlo dentro
 del c\'odigo de esta herramienta.
 
@@ -1010,10 +982,10 @@ del c\'odigo de esta herramienta.
 \subsection{Procesado de estad\'isticas}
 \label{subsec:statistics}
 
-En esta secci\'on se describir\'an los procesos de obtenci\'on y envio de los datos
+En esta secci\'on se describir\'an los procesos de obtenci\'on y env\'io de los datos
 estad\'isticos de los proyectos, adem\'as de su filtrado.
 
-\subsubsection*{Tablas de la base de datos}
+\subsubsection{Tablas de la base de datos}
 \label{subsubsec:tablas_bd}
 
 La obtenci\'on de los datos de la base de datos de MySQL se realizar\'a mediante
@@ -1040,7 +1012,7 @@ En esta figura observamos las siguientes tablas de la base de datos:
 
 \begin{itemize}
 
-\item \textbf{Project}: En esta tabla contiene el nombre y la fecha de alamcenamiento
+\item \textbf{Project}: En esta tabla contiene el nombre y la fecha de almacenamiento
 del proyecto, adem\'as del due\~no y los contribuidores del proyecto mediante unas relaciones
 de Foreign Key y Many to Many respectivamente con la tabla de Contributor.
 
@@ -1053,7 +1025,6 @@ ambos iguales.
 utilizaremos esta tabla, donde se almacenan el path absoluto donde ha sido analizado
 el fichero y el lenguaje en que este est\'a programado. Adem\'as de esto, esta tabla
 estar\'a relacionada con las tablas Project, Copyright y License para determinar
-ar
 a que proyecto pertenece el archivo y que copyrights y licencias est\'an contenidas
 en el.
 
@@ -1069,14 +1040,14 @@ con el fichero en el campo file.
 
 \end{itemize}
 
-\subsubsection*{Queries}
+\subsubsection{Queries}
 \label{subsubsec:queries}
 
 Una vez descrito el modo en que est\'an almacenados los datos en las distintas
 tablas de MySQL, procedemos a describir las interacciones que se han de realizar
 con la base de datos para poder obtener y enviar los distintos datos.
 
-\paragraph*{Estadisticas de proyecto}
+\paragraph{Estad\'isticas de proyecto}
 \label{paragraph:project_stats}
 
 Para la obtenci\'on de los datos globales de cada proyecto accederemos al recurso
@@ -1086,7 +1057,7 @@ que se traer\'an adem\'as los datos relacionados con la tabla de contribuidores.
 Tras realizar esta query se procesar\'an los datos para que sean serializables
 y para que tengan un formato JSON aceptable para el front-end programado en JavaScript.
 
-\paragraph*{Estadisticas totales}
+\paragraph{Estad\'isticas totales}
 \label{paragraph:total_stats}
 
 En el caso de la obtenci\'on del total de los datos almacenados en la base de datos,
@@ -1097,14 +1068,14 @@ la tabla Blame que devolver\'a el n\'umero de lineas totales realizadas por cada
 los distintos ficheros.
 
 Sobre estos datos se realizar\'a una suma mediante el m\'etodo count de SQL para cada valor diferente,
-gracias al metodo de la interfaz que aporta Django con el mismo nombre. Obteniendo
+gracias al m\'etodo de la interfaz que aporta Django con el mismo nombre. Obteniendo
 as\'i el numero total de lineas realizadas por cada autor y el n\'umero total de
 copyrights, licencias y lenguajes diferentes.
 
 Por \'ultimo se procesar\'an los datos para adaptarlos al formato JSON, y adem\'as
 al formato de los datos que tendr\'an que ser introducidos en los gr\'aficos de D3.
 
-\paragraph*{Estadisticas de usuario}
+\paragraph{Estad\'isticas de usuario}
 \label{paragraph:user_stats}
 
 Para obtener los datos concretos de un usuario, sobre la tabla Blame se realizar\'an
@@ -1119,7 +1090,7 @@ caso, del m\'etodo filter de la API de Django models.
 Al igual que en el caso anterior, se realizar\'a un procesado final antes de enviar
 la respuesta con los datos obtenidos, filtrados y sumados.
 
-\paragraph*{Estadisticas legales}
+\paragraph{Estad\'isticas legales}
 \label{paragraph:legal_stats}
 
 Por \'ultimo se obtendr\'an todos los ficheros filtrados por licencias o por
@@ -1144,7 +1115,7 @@ pasar\'a a explicar a continuaci\'on.
 \subsection{Estructura AngularJS}
 \label{subsec:angular_structure}
 
-El framework Angular nos permite s permite dividir nuestro c\'odigo por m\'odulos, los
+El framework Angular nos permite dividir nuestro c\'odigo por m\'odulos, los
 cuales permitir\'an diferenciar de manera adecuada las distintas funcionalidades
 que pueda tener nuestra web. Los m\'odulos que forman esta aplicaci\'on son los
 siguientes:
@@ -1212,18 +1183,18 @@ separado, pero es necesario atajarlos ya que entre uno y otro punto se produce
 un intercambio de informaci\'on.
 
 En este caso, al ser JavaScript, en el front-end, el consumidor de la informaci\'on,
-ser\'a necesario que antes de sue envio, la informaci\'on sea procesada para darle
+ser\'a necesario que antes de su env\'io, la informaci\'on sea procesada para darle
 un formato JSON. Este formato implica tener una colecci\'on de elementos con una
 clave y un valor asociado a ella.
 
 Este formato permitir\'a una adecuada serializaci\'on desde el servidor al cliente
-para el correcto envio de la respuesta, y que en el front-end no se requiera ning\'un
+para el correcto env\'io de la respuesta, y que en el front-end no se requiera ning\'un
 procesado especial de la respuesta, m\'as que el de un elemento JSON propio de JavaScript,
 y su posterior adaptaci\'on para su representaci\'on.
 
 La adaptaci\'on de la informaci\'on supone un elemento clave tambi\'en para considerar
 la API desarrollada como una API REST, puesto que esto conlleva una homogeneidad entre los
-recursos y el formato JSON permite dar esta homogeneidad a las respuesstas de estos recursos.
+recursos y el formato JSON permite dar esta homogeneidad a las respuestas de estos recursos.
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -1262,7 +1233,7 @@ encontrado y qu\'e medidas se han tomado para mitigar esos problemas.
 
 Aqu\'i viene lo que has aprendido durante el Grado/M\'aster y que has aplicado
 en el TFG/TFM. Una buena idea es poner las asignaturas m\'as relacionadas y
-comentar en un p\'arrafo los conocimientos y habilidades puestos en pr�ctica.
+comentar en un p\'arrafo los conocimientos y habilidades puestos en pr\'actica.
 
 \begin{enumerate}
   \item a
@@ -1329,4 +1300,3 @@ las tecnolog\'ias utilizadas y dem\'as.
 % http://texblog.org/2014/04/22/using-google-scholar-to-download-bibtex-citations/
 
 \end{document}
-}
