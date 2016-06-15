@@ -32,6 +32,7 @@
 \usepackage{latexsym}  %% Logo LaTeX
 \usepackage{titlesec}
 \setcounter{secnumdepth}{4}
+\usepackage{listings}
 
 \title{Memoria del Proyecto}
 \author{Nombre del autor}
@@ -169,10 +170,41 @@ mis padres, mi hermana y mi novia}
 %\addcontentsline{toc}{chapter}{Agradecimientos} % si queremos que aparezca en el �ndice
 \markboth{AGRADECIMIENTOS}{AGRADECIMIENTOS} % encabezado
 
-Aqu\'i vienen los agradecimientos\ldots Aunque est\'a bien acordarse de la pareja,
-no hay que olvidarse de dar las gracias a tu madre, que aunque a veces no lo
-parezca disfrutar\'a tanto de tus logros como t\'u\ldots Adem\'as, la pareja quiz\'as
-no sea para siempre, pero tu madre s\'i.
+Tras unos a\~nos que han pasado como una monta\~na rusa, con sus momentos altos y bajos,
+me gustar\'ia acordarme de las personas que me han ayudado en todos esos momentos
+para llegar a este punto, en el cual, mediante este proyecto, se cierra una etapa muy bonita y estresante de mi vida,
+y se abre otra que ser\'a a\'un m\'as bonita y seguramente, much\'isimo m\'as estresante.\par
+
+En primer lugar querr\'ia agradecer a mi tutor en este proyecto, el profesor D. Gregorio
+Robles Mart\'inez, su apoyo y sus consejos, no solo para la realizaci\'on del trabajo
+de fin de grado, sino para la b\'usqueda de motivaciones y retos para mi futura carrera
+profesional.\par
+
+Querr\'ia valorar y agradecer tambi\'en el esfuerzo, tanto econ\'omico como mental, que supone
+tener a un protoingeniero en casa. Por este esfuerzo, mis padres y mi hermana merecen todo
+el reconocimiento por mi parte, porque sin ellos, yo no estar\'ia donde estoy,
+porque su apoyo, ha sido esencial para no volverme loco y ellos conmigo, y porque
+ver el orgullo y el cari\~no que sienten por mi, hace que me esfuerce a\'un m\'as cada d\'ia.\par
+
+Tambi\'en querr\'ia agradecerle a mis abuelos, primas y primos, t\'ias y t\'ios,
+a toda mi familia, las palabras de \'animo y la f\'e y orgullo que mostraron tener
+por mi, que en ocasiones lleg\'o a superar la m\'ia propia.\par
+
+A mis compa\~neros de carrera de los que he aprendido mucho y a los que espero tambi\'en
+haberles dejado un buen recuerdo. En especial a Jos\'e con el que he estado estos cuatro
+a\~nos y con el que he compartido \'exitos y derrotas.\par
+
+Y adem\'as de mis compa\~neros de carrera, tambi\'en a mis compa\~neros en el trabajo,
+que me trataron como uno m\'as desde el principio y con los que he aprendido mucho en
+este corto periodo de tiempo.\par
+
+Y por \'ultimo, agradecerle a una persona muy especial que a pesar de la distancia,
+comparte conmigo todos mis sinsabores y festeja conmigo las victorias.
+Mi novia Carmen, que ha conseguido hacer de este estudiante, un futuro ingeniero muy
+feliz, con su apoyo constante y su cari\~no sincero.\par
+
+A todos ellos, y en especial mi familia y mi novia, gracias por hacer que este reto
+haya sido abordable. Muchas gracias.
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%% Resumen
@@ -184,14 +216,16 @@ no sea para siempre, pero tu madre s\'i.
 En este proyecto se pretende dar a conocer el ecosistema de proyectos de software
 libre y abierto, para mostrar los beneficios sociales y t\'ecnicos de su uso en la industria.\par
 \vspace{0.3cm}
-En un entorno en el que la tecnolog\'ia cubre cualquier \'ambito de nuestras vidas,
-la importancia de que esta tecnolog\'ia se desarrolle por y para las personas, es
+En un entorno en el que la tecnolog\'ia interviene en muchos aspectos de nuestras vidas,
+la importancia de que esta tecnolog\'ia se desarrolle por y para las personas es
 cada vez m\'as importante.\par
 \vspace{0.3cm}
-Por tanto, mediante el an\'alisis de proyectos de referencia en la comunidad Open Source,
-se obtendr\'a, gracias a la utilizaci\'on de herramientas de an\'alisis de ficheros,
-datos legales, t\'ecnicos y sociales de estos proyectos. Lo cual nos permitir\'a
-conocer en profundidad las caracter\'isticas y la importancia de este tipo de
+Por tanto, gracias a la utilizaci\'on de herramientas de an\'alisis de ficheros y repositorios,
+como Scancode Toolkit, GithubAPI y diferentes librer\'ias Python, se realizar\'an
+an\'alisis de proyectos de referencia en la comunidad Open Source, de los cuales se obtendr\'an
+datos legales, t\'ecnicos y sociales.\par
+\vspace{0.3cm}
+Esto nos permitir\'a conocer en profundidad las caracter\'isticas y la importancia de este tipo de
 proyectos en el sector tecnol\'ogico y del desarrollo de software, adem\'as de
 su repercusi\'on en la sociedad.
 
@@ -206,16 +240,17 @@ This project aims to be an introduction to the free and open source software eco
 showing the social and technical benefits of its use in the industry.\par
 \vspace{0.3cm}
 In an environment where technology is present in every aspect of our lives,
-the importance of this technology being developed by people and for people, is
+the importance of this technology being developed by people and for people is
 more and more important.\par
 \vspace{0.3cm}
-For this reason, through the analysis of projects of high importance in the Open
-Source community, we will obtain, using file analysis tools, legal, technical and
-social data from this projects. This will allow us to know in deep, the
-characteristics and the importance of this type of projects in technological
-and software developing fields, as well as its repercussion in society.
+Therefore, using file and repository analyzer tools like Scancode Toolkit, GithubAPI
+and several Python libraries, we will analyze projects of high importance in the
+Open Source community, from which we will obtain legal, technical and social data.\par
+\vspace{0.3cm}
+This will allow us to know in deep the characteristics and the importance of this
+type of projects in the technological and software developing fields, as well
+as its repercussion in society.
 
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % ÍNDICES %
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -247,9 +282,9 @@ and software developing fields, as well as its repercussion in society.
 \pagenumbering{arabic} % para empezar la numeración de página con números
 
 En este proyecto se ha realizado un an\'alisis del ecosistema de proyectos de
-software libre que podemos encontrar en la red, centr\'andose especialmente en
+software libre que podemos encontrar en la red. Centr\'andose especialmente en
 la plataforma Github. Mediante este an\'alisis se ha intentado dar a conocer las
-caracter\'isticas de este entorno adem\'as de determinar las peculiaridades que
+caracter\'isticas de este entorno, adem\'as de determinar las peculiaridades que
 aportan los datos obtenidos a la formaci\'on y desarrollo del Free Open Source Software.
 
 A continuaci\'on, para una mejor comprensi\'on del proyecto, se explicar\'an el
@@ -265,7 +300,7 @@ diferentes proyectos de software libre y de sus desarrolladores.
 
 Con la obtenci\'on de la informaci\'on presente en estos proyectos, se pretende
 realizar una comparativa de los diferentes tipos de software libre que se est\'an
-desarrollando en la actualidad, adem\'as de sus caracter\'isticas en cuanto a
+desarrollando en la actualidad. Adem\'as de sus caracter\'isticas en cuanto a
 copyrights y licencias. De esta manera se podr\'an entender mejor las cualidades
 que ha de tener un determinado software para ser libre y abierto, y para poder
 progresar y obtener mayor relevancia en el mundo del Free Open Source Software.
@@ -279,53 +314,8 @@ Este proceso de an\'alisis se realiza en el contexto de una aplicaci\'on
 web, por tanto, el resultado del mismo podr\'a ser accesible a m\'ultiples usuarios
 que busquen el tipo de proyecto que se est\'a realizando en la actualidad, o a
 colaboradores activos de proyectos de software libre, o caracter\'isticas de distintos
-proyectos que les permitan tomar conciencia de la importancia de que el nuevo software
+proyectos, que les permitan tomar conciencia de la importancia de que el nuevo software
 que est\'an desarrollando sea libre y accesible para todo el mundo.
-
-%\subsection{Estilo}
-%\label{subsec:estilo}
-%
-%Sobre el uso de las comas\footnote{\url{http://narrativabreve.com
-%/2015/02/opiniones-de-un-corrector-de-estilo-11-recetas-para-escribir-correctamente-la-coma.html}}
-%
-% \begin{figure}
-%    \centering
-%    \includegraphics[bb=0 0 800 600, width=12cm, keepaspectratio]{img/foro1}
-%    \caption{P\'agina con enlaces a hilos}
-%    \label{figura:foro_hilos}
-% \end{figure}
-%
-%{\footnotesize
-%\begin{verbatim}
-%    From gaurav at gold-solutions.co.uk  Fri Jan 14 14:51:11 2005
-%    From: gaurav at gold-solutions.co.uk (gaurav_gold)
-%    Date: Fri Jan 14 19:25:51 2005
-%    Subject: [Mailman-Users] mailman issues
-%    Message-ID: <003c01c4fa40$1d99b4c0$94592252@gaurav7klgnyif>
-%
-%    Dear Sir/Madam,
-%    How can people reply to the mailing list?  How do i turn off
-%    this feature? How can i also enable a feature where if someone
-%    replies the newsletter the email gets deleted?
-%    Thanks
-%
-%    From msapiro at value.net  Fri Jan 14 19:48:51 2005
-%    From: msapiro at value.net (Mark Sapiro)
-%    Date: Fri Jan 14 19:49:04 2005
-%    Subject: [Mailman-Users] mailman issues
-%    In-Reply-To: <003c01c4fa40$1d99b4c0$94592252@gaurav7klgnyif>
-%    Message-ID: <PC173020050114104851057801b04d55@msapiro>
-%
-%    gaurav_gold wrote:
-%    >How can people reply to the mailing list?  How do i turn off
-%    this feature? How can i also enable a feature where if someone
-%    replies the newsletter the email gets deleted?
-%
-%    See the FAQ
-%    >Mailman FAQ: http://www.python.org/cgi-bin/faqw-mm.py
-%    article 3.11
-%\end{verbatim}
-%}
 
 \section{Motivaciones personales}
 \label{sec:motivaciones}
@@ -338,7 +328,7 @@ t\'ecnicas de Big Data y tambi\'en el desarrollo de soluciones a problemas de
 \'indole acad\'emica.
 
 Por otra parte, los diferentes tipos de tecnolog\'ias utilizadas para desarrollar
-el proyecto, hac\'ian que este fuera m\'as interesante desde un punto de vista
+el proyecto hac\'ian que este fuera m\'as interesante desde un punto de vista
 educativo y de desarrollo de las habilidades program\'aticas.
 
 \section{Estructura de la memoria}
@@ -357,8 +347,7 @@ Para una mejor lectura, se desglosa a continuaci\'on la estructura de este docum
   utilizadas para elaborar las distintas partes del proyecto.
 
   \item \textbf{4. Dise\~no e implementaci\'on.} En esta secci\'on se elabora una
-  explicaci\'on del proceso realizado y el dise\~no previo de este proceso, para
-  una correcta realizaci\'on del proyecto.
+  explicaci\'on del proceso realizado y el dise\~no previo a este proceso.
 
   \item \textbf{5. Resultados.} Para mostrar los resultados obtenidos tras la realizaci\'on
   del proyecto.
@@ -370,7 +359,7 @@ Para una mejor lectura, se desglosa a continuaci\'on la estructura de este docum
   adicional para la adecuada comprensi\'on de la memoria.
 
   \item \textbf{8. Bibliograf\'ia.} Lista de fuentes de informaci\'on en las cuales
-  se basa la este documento.
+  se basa este documento.
 \end{itemize}
 
 
@@ -403,7 +392,7 @@ secundarios que se describir\'an a continuaci\'on:
 \begin{itemize}
 
 \item Familiarizarse con la herramienta Scancode Toolkit que servir\'a para
-analizar proyectos desde la terminal de Unix y posteriormente analizar la
+analizar proyectos desde la terminal de Unix, y posteriormente analizar la
 infomaci\'on devuelta por dicha herramienta.
 
 \item Inicializar el proyecto Django/Python que albergar\'a la aplicaci\'on
@@ -422,7 +411,7 @@ primeros proyectos FOSS que ser\'an posteriormente representados.
 correcta y ordenada la representaci\'on de los datos obtenidos de la API.
 
 \item Representar los datos obtenidos de la API REST mediante la librer\'ia
-nvd3 basada en d3.js en diferentes gr\'aficos.
+nvd3, basada en d3.js, en diferentes gr\'aficos.
 
 \item Corregir la est\'etica de la p\'agina, adem\'as de distintos problemas de
 adaptaci\'on entre el back-end (Python) y el front-end (JavaScript).
@@ -436,7 +425,7 @@ que ayuden a sacar conclusiones del entorno Open Source.
 \label{sec:planificacion-temporal}
 
 La planificaci\'on temporal del proyecto queda representada por el gr\'afico del
-ap\'endice X para una mejor comprensi\'on de los plazos tomados para la consecuci\'on
+ap\'endice~\ref{app:planificacion} para una mejor comprensi\'on de los plazos tomados para la consecuci\'on
 de los distintos objetivos.
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -448,23 +437,17 @@ de los distintos objetivos.
 \chapter{Estado del arte}
 
 En esta secci\'on se presentar\'an las tecnolog\'ias utilizadas en el desarrollo
-del proyecto, tanto en el an\'alisis de datos como en la representaci\'on de los
+del proyecto, tanto en el an\'alisis de datos, como en la representaci\'on de los
 mismos.
 
-Para ello se realizar\'a una descripci\'on general de cada herramienta y las
+Para ello se realizar\'a una descripci\'on general de cada herramienta, y de las
 cualidades espec\'ificas por las cuales han sido utilizadas.
-
-%Puedes citar libros, como el de Bonabeau et al. sobre procesos estigm\'argicos~\cite{bonabeau:_swarm}.
-%
-%Tambi\'en existe la posibilidad de poner notas al pie de p\'agina, por ejemplo,
-%una para indicarte que visite la p\'agina de
-%LibreSoft\footnote{\url{http://www.libresoft.es}}.
 
 \section{Free Open Source Software (FOSS)}
 \label{sec:FOSS}
 
 Para entender el concepto de FOSS, se explican a continuaci\'on los requisitos
-del software para ser libre y abierto, estos dos t\'erminos siguen las directrices
+del software para ser libre y abierto. Estos dos t\'erminos siguen las directrices
 de dos organizaciones, Free Software Foundation~\cite{fsf} y
 Open Source Initiative~\cite{opensource} respectivamente.
 
@@ -489,7 +472,7 @@ Para que el software se considere libre, ha de cumplir estas cuatro libertades:
 
 \end{itemize}
 
-Para las libertades 1 y 3, es necesario que el c\'odigo fuente del software sea
+Para tener estas libertades, es necesario que el c\'odigo fuente del software sea
 de libre acceso al p\'ublico.
 
 \begin{figure}[H]
@@ -499,8 +482,8 @@ de libre acceso al p\'ublico.
 
 Por otro lado, la iniciativa Open Source se centra menos en las caracter\'isticas
 \'eticas del software libre, y m\'as en las t\'ecnicas y econ\'omicas. Sin embargo,
-son muy pocos los proyectos de software que siendo reconocidos por la Ola Open
-Source Initiative, no sea considerado Free Software. Por esta raz\'on se suele
+son muy pocos los proyectos de software que siendo reconocidos por la Open
+Source Initiative, no sean considerados Free Software. Por esta raz\'on se suele
 utilizar el t\'ermino Free Open Source Software.
 
 \section{Python}
@@ -515,10 +498,10 @@ como un proyecto de software libre. Actualmente se encuentra bajo una licencia
 Python Software Foundation License, compatible con la licencia general de GNU a partir
 de su versi\'on 2.1.1.
 
-Debido a su facilidad de aprendizaje y su uso sencillo, adem\'as de por su versatilidad
+Debido a su facilidad de aprendizaje y su uso sencillo, adem\'as de por su versatilidad,
 al permitir la combinaci\'on de programaci\'on declarativa con programaci\'on orientada
-a objetos y el gran n\'umero de m\'odulos utilizables en este lenguaje, hac\'ian de Python
-la elecci\'on adecuada como lenguaje de programaci\'on para este proyecto.
+a objetos, y el gran n\'umero de m\'odulos utilizables en este lenguaje, Python se eligi\'o
+como la opci\'on adecuada como lenguaje de programaci\'on para este proyecto.
 
 Actualmente existen dos versiones de Python, las 2.X y las 3.X. Para este proyecto,
 se utiliz\'o la versi\'on 2.7.6 de Python. Esto es debido a que, aunque las versiones
@@ -536,7 +519,7 @@ y las versiones 1.9 del framework Django que se describir\'a a continuaci\'on.
 Django~\cite{django} es un framework web de alto nivel para el lenguaje de
 programaci\'on Python. Este framework permite el desarrollo r\'apido, limpio y
 estructurado de cualquier aplicaci\'on web sin importar su grado de complejidad.
-Django es al igual que Python es de c\'odigo abierto y cuenta con una licencia BSD.
+Django es, al igual que Python, de c\'odigo abierto y cuenta con una licencia BSD.
 
 \begin{figure}[H]
   \centering
@@ -549,20 +532,20 @@ la mejor opci\'on para entrar en contacto con el desarrollo de aplicaciones web
 de una manera estructurada, concisa y abordable para programadores de cualquier
 nivel.
 
-Estas cualidades adem\'as de la sencillez de interacci\'on con bases de datos
-relacionales supusieron un punto clave para la elecci\'on de Django como
+Estas cualidades, adem\'as de la sencillez de interacci\'on con bases de datos
+relacionales, supusieron un punto clave para la elecci\'on de Django como
 framework sobre el que desarrollar la aplicaci\'on web en la que se basa este proyecto.
 
 Para la realizaci\'on del mismo se ha utilizado la versi\'on 1.9 de Django, por una
-mayor sencillez y una mejor interoperabilidad con las bases de datos relacionales
+mayor sencillez y una mejor interoperabilidad con las bases de datos relacionales,
 como puede ser MySQL. Esto supone como ya se ha comentado anteriormente, que existan
 restricciones de compatibilidad de est\'a versi\'on con las versiones 3.X de Python.
 
 \subsection{Scancode Toolkit}
 \label{subsec:scancode}
 
-La herramienta Scancode Toolkit, es un proyecto de software libre desarrollado en
-Python y que permite 'escanear' carpetas y ficheros para obtener entre otros, las
+La herramienta Scancode Toolkit es un proyecto de software libre desarrollado en
+Python, que permite 'escanear' carpetas y ficheros para obtener, entre otros, las
 licencias y copyrights contenidos dentro de cada fichero.
 
 Esta herramienta permite su uso desde la terminal de Linux, o en el caso de este proyecto,
@@ -571,10 +554,10 @@ informaci\'on requerida en cada caso.
 
 Para poder utilizar Scancode Toolkit en el proyecto, se tuvo que adaptar el c\'odigo
 para la obtenci\'on de la informaci\'on legal del archivo directamente desde su contenido,
-en lugar de facilitar la localizaci\'on del mismo tal y como se realizaba por defecto
+en lugar de facilitar la localizaci\'on del mismo, tal y como se realizaba por defecto
 en el c\'odigo que se puede ver en la plataforma Github~\cite{scancode}.
 
-Esta herramienta adem\'as cuenta con otras funcionalidades que no han sido utilizadas
+Esta herramienta adem\'as, cuenta con otras funcionalidades que no han sido utilizadas
 para realizar el an\'alisis de los archivos en este proyecto. Estas funcionalidades
 son la obtenci\'on del lenguaje en el que est\'an escritos, el n\'umero de lineas, etc.
 
@@ -584,10 +567,10 @@ son la obtenci\'on del lenguaje en el que est\'an escritos, el n\'umero de linea
 Esta librer\'ia Python sirve como interacci\'on de alto nivel con repositorios git.
 
 La interacci\'on de esta librer\'ia con los repositorios abarca desde la funcionalidad
-de clonar un repositorio a obtener el 'blame' de un fichero dentro del mismo.
+de clonar un repositorio, a la obtenci\'on del 'blame' de un fichero dentro del mismo.
 Y precisamente estas dos funcionalidades son las que se han utilizado en este proyecto.
 
-La librer\'ia GitPython es de c\'odigo abierto y esta disponible para su uso y modificaci\'on
+La librer\'ia GitPython es de c\'odigo abierto y est\'a disponible para su uso y modificaci\'on
 en su repositorio de Github~\cite{gitpython}.
 
 \subsection{Pygments}
@@ -612,11 +595,11 @@ en los proyectos FOSS a analizar.
 \section{Base de datos}
 \label{sec:database}
 
-Para la realizaci\'on de este proyecto, se realiz\'o una comparativa previa del
+Para la realizaci\'on de este proyecto se realiz\'o una comparativa previa del
 tipo de base de datos que se utilizar\'ia~\cite{sqlvsnosql}.
 
 A la hora de escoger una base de datos adecuada para un proyecto, se pueden
-escoger dos tipos de base de datos, relacional y no relacional.
+elegir entre dos tipos de bases de datos, relacional y no relacional.
 
 Una base de datos relacional, normalmente con SQL como lenguaje base, es aquella
 que cumple con el modelo previamente fijado sobre ella. Este tipo de bases de datos
@@ -640,10 +623,10 @@ Estas caracter\'isticas suponen una serie de ventajas de uso:
 
 Por otro lado, las bases de datos no relacionales se caracterizan por no guardar
 relaciones entre sus distintas colecciones. Su modo laxo de almacenamiento permite
-guardar en sus colecciones, cualquier tipo de dato o estructura sin seguir
+guardar en sus colecciones cualquier tipo de dato o estructura sin seguir
 ning\'un modelo fijado previamente.
 
-Dichas particularidades otorgan a las bases de datos no relacionales, las siguientes
+Dichas particularidades otorgan a las bases de datos no relacionales las siguientes
 ventajas:
 
 \begin{itemize}
@@ -658,11 +641,11 @@ ventajas:
 
 \end{itemize}
 
-Observando las cualidades de ambas, se decidi\'o usar una base de datos relacional,
-ya que a pesar de su mejor funcionamiento en entornos de Big Data y su rapidez al
+Observando las cualidades de ambas, se decidi\'o usar una base de datos relacional.
+Ya que a pesar de su mejor funcionamiento en entornos de Big Data y su rapidez al
 devolver los datos almacenados, las bases de datos no relacionales tienen numerosos
 problemas a la hora de hacer c\'alculos de datos agregados. Al tratarse nuestra
-aplicaci\'on web un dashboard interactivo en el que se mostrar\'an datos sumados de
+aplicaci\'on web de un dashboard interactivo en el que se mostrar\'an datos sumados de
 los distintos proyectos almacenados, las bases de datos relacionales se adaptan mucho
 mejor al uso que se dar\'a a los datos recogidos.
 
@@ -678,7 +661,7 @@ Corporation y es considerada la base de datos relacional open source m\'as popul
   \includegraphics[width=7cm, keepaspectratio]{img/mysql-logo}
 \end{figure}
 
-La simplicidad de MySQL como gestor de bases de datos no relacionales, supone una
+La simplicidad de MySQL como gestor de bases de datos no relacionales supone una
 cualidad esencial para la gesti\'on de p\'aginas web con representaci\'on de datos
 din\'amicos.
 
@@ -686,14 +669,14 @@ Adem\'as, MySQL soporta una gran cantidad de tipos diferentes para almacenar dat
 y al est\'ar tan extendido, tiene m\'ultiples APIs para interactuar con la base de datos desde
 diferentes lenguajes de programaci\'on.
 
-Estas cualidades adem\'as de se escalabilidad, y su facilidad de uso utilizando Django
+Estas cualidades adem\'as de su escalabilidad y su facilidad de uso utilizando Django
 como framework web, son caracter\'isticas clave para el uso de este gestor de bases
 de datos en este proyecto.
 
 \section{Front-end}
 \label{sec:front-end}
 
-En el c\'odigo del cliente o front-end, se han utilizado m\'ultiples tecnolog\'ias
+En el c\'odigo del cliente o front-end se han utilizado m\'ultiples tecnolog\'ias
 para la visualizaci\'on de los datos y la realizaci\'on de una adecuada interfaz
 de usuario. Esas tecnolog\'ias se pasan a describir en las siguientes secciones.
 
@@ -701,7 +684,7 @@ de usuario. Esas tecnolog\'ias se pasan a describir en las siguientes secciones.
 \label{subsec:js}
 
 JavaScript~\cite{js} es un lenguaje de programaci\'on interpretado, dialecto del est\'andar
-ECMAScript y fue desarrollado por Brendan Eich, trabajador de Netscape en 1995.
+ECMAScript, y fue desarrollado por Brendan Eich, trabajador de Netscape en 1995.
 Este lenguaje es orientado a objetos, imperativo y con tipado d\'ebil y din\'amico.
 
 \begin{figure}[H]
@@ -709,8 +692,8 @@ Este lenguaje es orientado a objetos, imperativo y con tipado d\'ebil y din\'ami
   \includegraphics[width=3cm, keepaspectratio]{img/js-logo}
 \end{figure}
 
-Este lenguaje es usado normalmente en el lado del cliente, como parte del c\'odigo
-utilizado por el navegador, permitiendo la realizaci\'on de p\'aginas web din\'amicas
+Este lenguaje es usado normalmente en el lado del cliente como parte del c\'odigo
+utilizado por el navegador. Permitiendo la realizaci\'on de p\'aginas web din\'amicas
 e interfaces de usuario.
 
 JavaScript es el \'unico lenguaje apoyado com\'unmente por todos los navegadores modernos.
@@ -728,12 +711,12 @@ permite la creaci\'on de SPA o Single Page Applications.
   \includegraphics[width=7cm, keepaspectratio]{img/angular-logo}
 \end{figure}
 
-El nivel de organizaci\'on que permite Angular en el lado del cliente, adem\'as del
-dinamismo que otorga su principal caracter\'istica, el two way data binding, cuyo
+Angular permite un alto nivel de organizaci\'on y dinamismo en el lado del cliente
+gracias a su principal caracter\'istica, el two way data binding, cuyo
 funcionamiento permite que cualquier modificaci\'on realizada sobre la vista
-repercuta en el modelo y viceversa, tal y como se muestra en la figura~\ref{fig:2waydatabinding},
-lo han convertido en uno de los frameworks web m\'as populares en la actualidad,
-al librar al back-end de funciones de renderizado de templates.
+repercuta en el modelo y viceversa, tal y como se muestra en la figura~\ref{fig:2waydatabinding}.
+Esto lo han convertido en uno de los frameworks web m\'as populares en la actualidad,
+al liberar al back-end de funciones de renderizado de templates.
 
 Para la representaci\'on de los datos obtenidos del an\'alisis, se utilizar\'an
 gr\'aficos que se generar\'an mediante la modificaci\'on del DOM de la p\'agina web.
@@ -753,15 +736,15 @@ del mismo.
 \label{subsec:d3}
 
 La librer\'ia de JavaScript D3~\cite{d3}, llamada as\'i por las siglas Data-Driven Documents,
-permite producir a partir de datos, gr\'aficos din\'amicos e interactivos mediante SVG.
+permite producir, a partir de datos, gr\'aficos din\'amicos e interactivos mediante SVG.
 
 \begin{figure}[H]
   \centering
   \includegraphics[width=3cm, keepaspectratio]{img/d3-logo}
 \end{figure}
 
-Para este proyecto, utilizaremos D3 con otra librer\'ia basada en d3.js llamada nvd3.js, que permite
-crear de manera sencilla y uniforme, gr\'aficos de distintos tipos y para cualquier
+Para este proyecto utilizaremos D3 con otra librer\'ia basada en d3.js, llamada nvd3.js, que permite
+crear de manera sencilla y uniforme gr\'aficos de distintos tipos y para cualquier
 tipo de datos, que adem\'as se actualizan conforme estos datos vayan cambiando.
 
 \subsection{HTML5 y CSS3}
@@ -783,7 +766,7 @@ representar nuestra interfaz de usuario.
 \end{figure}
 
 Adem\'as el DOM de la p\'agina, que es una representaci\'on en \'arbol de los distintos
-elementos de la plantilla HTML, nos permite modificar mediante distintas herramientas
+elementos de la plantilla HTML, nos permite modificar mediante distintas herramientas,
 como puede ser Angular, el aspecto y organizaci\'on de nuestra interfaz.
 
 \subsubsection*{CSS3}
@@ -804,9 +787,9 @@ de las caracter\'isticas deseadas para hacerla m\'as atractiva al usuario.
 \label{subsec:bootstrap}
 
 Bootstrap~\cite{bootstrap} es un conjunto de herramientas de c\'odigo abierto, desarrollado y mantenido
-por Twitter, que permite hacer nuestra p\'agina HTML/CSS responsiva. Es decir,
+por Twitter, que permite hacer nuestra p\'agina HTML/CSS responsiva, es decir,
 Bootstrap permite que una página web se adapte al tama\~no del navegador o el dispositivo en que
-está siendo mostrada.
+est\'a siendo mostrada.
 
 \begin{figure}[H]
   \centering
@@ -817,13 +800,13 @@ Esta funcionalidad la otorga el sistema de celdas de Bootstrap que permite una
 mejor maquetaci\'on de nuestra p\'agina web.
 
 En este proyecto se utiliza Bootstrap por cuestiones est\'eticas, pero adem\'as por
-seguir con la filosof\'ia de organizaci\'on y estructurac\'on del c\'odigo que se
+seguir con la filosof\'ia de organizaci\'on y estructuraci\'on del c\'odigo que se
 asume al utilizar AngularJS.
 
 \section{Control de versiones}
 \label{sec:git}
 
-Para la un mejor seguimiento y control de los avances de este proyecto, se ha
+Para un mejor seguimiento y control de los avances de este proyecto, se ha
 utilizado Git como herramienta de control de versiones.
 
 \begin{figure}[H]
@@ -831,32 +814,11 @@ utilizado Git como herramienta de control de versiones.
   \includegraphics[width=4cm, keepaspectratio]{img/git-logo}
 \end{figure}
 
-Este software fue dise\~nado por Linus Torvalds en 2005, para permitirle a el
-y a su equipo un desarrollo m\'as \'agil y productivo.
+Este software fue dise\~nado por Linus Torvalds en 2005 para permitirle, a \'el
+y a su equipo, un desarrollo m\'as \'agil y productivo.
 
 Por este motivo y por la funci\'on de backup que estas versiones permiten,
 se ha utilizado este software para registrar cada hito conseguido en el proyecto.
-
-\section{Interacci\'on entre tecnolog\'ias}
-\label{sec:interaction}
-
-Por \'ultimo y para sintetizar, en esta secci\'on explicaremos las interacciones
-entre las tecnolog\'ias descritas en las secciones anteriores.
-
-Tal y como se muestra en la figura~\ref{fig:interaction}, al acceder un usuario
-a la p\'agina web y realizar el an\'alisis o la b\'usqueda de ciertos datos, se enviar\'a
-una petici\'on desde el cliente Angular hasta el servidor Django, que tras obtener
-los datos de la base de datos, los devolver\'a en la respuesta al cliente, y este
-actualizar\'a mediante el two way data binding los datos contenidos en los gr\'aficos
-de la librer\'ia D3.
-
-\begin{figure}[H]
-    \centering
-    \includegraphics[width=12cm, keepaspectratio]{img/technologies-interaction}
-    \caption{Interacci\'on entre las distintas tecnolog\'ias}
-    \label{fig:interaction}
-\end{figure}
-
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -869,11 +831,9 @@ de la librer\'ia D3.
 En esta secci\'on se desarrollar\'a el proceso seguido para realizar el dise\~no
 preliminar del proyecto y su implementaci\'on.
 
-Primero se dar\'a una visi\'on general de la arquitectura de la aplicaci\'on para
+Primero se dar\'a una visi\'on general de la arquitectura de la aplicaci\'on, para
 posteriormente centrarse en las dos partes principales de la aplicaci\'on, el front-end
-y el back-end, y debido a las diferentes tecnolog\'ias utilizadas en ambos, se
-explicar\'a por \'ultimo el proceso de adaptaci\'on entre una y otra parte, para
-el correcto funcionamiento de la aplicaci\'on.
+y el back-end.
 
 \section{Arquitectura general}
 \label{sec:arquitectura}
@@ -881,21 +841,33 @@ el correcto funcionamiento de la aplicaci\'on.
 Este proyecto consiste en una aplicaci\'on web Django en la que se mostrar\'an los resultados
 de un an\'alisis producido en el back-end de la aplicaci\'on.
 
+El funcionamiento de la aplicaci\'on se muestra en la figura~\ref{fig:interaction},
+en la que se puede resumir la estructura del proyecto.
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=12cm, keepaspectratio]{img/technologies-interaction}
+    \caption{Estrcutura del proyecto}
+    \label{fig:interaction}
+\end{figure}
+
+La aplicaci\'on constar\'a de dos partes, el back-end y el fron-end.
+
 El back-end o lado del servidor ha sido desarrollado en Python mediante el framework
-web Django. En esta parte del c\'odigo se ha desarrollado una API REST que devolver\'a
+web Django. En esta parte del c\'odigo se ha desarrollado una API REST que devolver\'a,
 en funci\'on de los recursos a los cuales se acceda, los resultados analizados en el
 momento de la petici\'on o almacenados en la base de datos, del proyecto FOSS requerido
 por el usuario. Adem\'as permitir\'a la obtenci\'on de los datos globales de la aplicaci\'on,
 as\'i como los correspondientes a un usuario y aquellos relacionados con una determinada
-inada
 inforamci\'on legal.
 
 De los resultados devueltos por el servidor se servir\'a el c\'odigo del navegador
 o front-end. Este c\'odigo realizar\'a funciones de visualizaci\'on de los datos
-obtenidos. Mediante el framework web AngularJS se realizar\'a una SPA que mostrar\'a
-dos secciones en las que visualizar los datos, una en la que analizar un proyecto
+obtenidos. Mediante el framework web AngularJS se realizar\'a una SPA, que mostrar\'a
+dos secciones en las que visualizar los datos. Una en la que analizar un proyecto
 y otra en la que visualizar las estad\'isticas totales almacenadas en la base de datos,
-adem\'as de poder filtrarlas.
+adem\'as de poder filtrarlas. Los datos se representar\'an mediante gr\'aficos de la
+librer\'ia D3.
 
 Para una mejor comprensi\'on de la aplicaci\'on, se desarrollar\'a en mayor profundidad
 el funcionamiento de la misma en los siguientes apartados.
@@ -917,10 +889,10 @@ En este apartado se explicar\'an las caracter\'isticas de la API REST desarrolla
 en el servidor Django.
 
 Para implementar esta aplicaci\'on y esta API REST, se puso en funcionamiento
-primero un proyecto Django sobre el cual se desarrollar\'a el back-end de la aplicaci\'on.
+primero un proyecto Django sobre el cual se desarroll\'o el back-end de la aplicaci\'on.
 
 Desde este servidor Django se sirven los archivos correspondientes a la p\'agina
-principal y en este caso \'unica de la aplicaci\'on, adem\'as del c\'odigo correspondiente
+principal y, en este caso, \'unica de la aplicaci\'on, adem\'as del c\'odigo correspondiente
 al funcionamiento de la p\'agina. Tambi\'en en este servidor se puede acceder a
 cuatro recursos diferentes correspondientes a la API REST ya mencionada.
 
@@ -928,15 +900,15 @@ Estos recursos son los siguientes:
 
 \begin{itemize}
   \item \textbf{/analyze}: Accediendo a este recurso y enviando en el cuerpo de
-  la petici\'on HTTP, la url de un proyecto, se obtienen los datos correspondientes
+  la petici\'on HTTP la url de un proyecto, se obtienen los datos correspondientes
   al an\'alisis del proyecto al que corresponde la url. Entre estos datos se
-  encuentran los ficheros que contiene y los contribuidores, las licencias y los
+  encuentran los ficheros que contiene y los contribuidores, licencias y
   copyrights presentes en ellos.
 
   \item \textbf{/all}: Mediante el acceso a este recurso se devolver\'an en la
   respuesta todos los datos contenidos en la base de datos que hagan referencia
   al total de lineas que ha desarrollado cada contribuidor, los lenguajes utilizados
-  y los copyrights y licencias utilizados en los distintos ficheros almacenados.
+  y los copyrights y licencias presentes en los distintos ficheros almacenados.
 
   \item \textbf{/user}: Al realizar una petici\'on HTTP sobre este recurso con
   el nombre de un usuario en su cuerpo, se devolver\'an los lenguajes utilizados
@@ -944,7 +916,7 @@ Estos recursos son los siguientes:
   copyrights que ha utilizado en sus ficheros.
 
   \item \textbf{/legal}: Al acceder a este recurso, se podr\'an enviar una licencia
-  o un copyright por los cual se quieran filtrar los ficheros almacenados en la
+  o un copyright por los cuales se quieran filtrar los ficheros almacenados en la
   base de datos, devolviendo en la respuesta todos los ficheros que contengan
   esta informaci\'on legal.
 
@@ -953,18 +925,18 @@ Estos recursos son los siguientes:
 \subsection{An\'alisis de proyectos}
 \label{subsec:analysis}
 
-A continuaci\'on se describir\'a el proceso de an\'alisis de los distintos proyectos
+A continuaci\'on se describir\'a el proceso de an\'alisis de los distintos proyectos,
 as\'i como la implementaci\'on de dicho an\'alisis.
 
 \subsubsection*{Proceso}
 \label{subsubsec:proceso}
 
-El an\'alisis se realizar\'a al acceder al recurso /analyze
+El an\'alisis se realizar\'a al acceder al recurso /analyze,
 siempre y cuando no haya sido almacenado previamente en la base de datos, y la
 fecha en la que fue almacenado sea m\'as reciente que la fecha de \'ultima
 modificaci\'on del proyecto.
 
-Si se cumplen estas dos condiciones, en la vista correspondiente al recurso /analyze
+Si se cumplen estas dos condiciones, en la vista correspondiente al recurso /analyze,
 se utilizar\'a la librer\'ia GitPython para clonar el repositorio del proyecto
 a analizar, para posteriormente utilizar la herramienta Scancode Toolkit sobre la
 carpeta en la que este proyecto fue clonado.
@@ -977,30 +949,30 @@ pueden ser los contribuidores y las contribuciones de cada uno de ellos.
 \label{subsubsec:implementacion}
 
 Para implementar este proceso se har\'a uso de una funci\'on que con la herramienta
-Scancode Toolkit, recorrer\'a todos los archivos contenidos en la carpeta para
+Scancode Toolkit, recorrer\'a todos los archivos contenidos en la carpeta, para
 obtener de cada uno de ellos sus licencias y copyrights. Esta herramienta utiliza
 una lista de licencias y reglas que le sirven como patr\'on para comparar el
 contenido de cada fichero en busca de las licencias a las que correspondan dichas reglas.
 
-Adem\'as de Scancode, se utilizar\'a como se especific\'o anteriormente, la API de
-Github, que devuelve un objeto JSON con la informaci\'on requerida, en este caso
+Adem\'as de Scancode, se utilizar\'a, como se especific\'o anteriormente, la API de
+Github, que devuelve un objeto JSON con la informaci\'on requerida, en este caso,
 los contribuidores e informaci\'on general del proyecto.
 
-Por otro lado, tambi\'en se utilizan GitPython para obtener las lineas equivalentes al comando git blame de Git,
-que ser\'an posteriormente parseadas para obtener el autor de cada una y la biblioteca
+Por otro lado, tambi\'en se utilizan GitPython, para obtener las lineas equivalentes al comando git blame de Git,
+que ser\'an posteriormente parseadas para obtener el autor de cada una, y la biblioteca
 Pygments que a partir del contenido de cada fichero, determinar\'a el lenguaje en
 que est\'a programado en base a su sintaxis.
 
 \subsubsection*{Otras consideraciones}
 \label{subsubsec:consideraciones}
 
-Para el correcto funcionamiento de la aplicaci\'on fueron necesarias ciertas modificaciones
+Para el correcto funcionamiento de la aplicaci\'on, fueron necesarias ciertas modificaciones
 sobre la herramienta Scancode Toolkit:
 
 \begin{itemize}
 \item El funcionamiento por defecto de Scancode Toolkit carga la lista de reglas
 y licencias en cada an\'alisis. En este caso, al tratarse de una aplicaci\'on web,
-esta funcionalidad no es viable, por lo tanto se tuvo que modificar el
+esta funcionalidad no es viable, por lo tanto, se tuvo que modificar el
 funcionamiento de la herramienta para que la carga de licencias se realice
 nada m\'as arrancar la aplicaci\'on web, almacenando despu\'es la lista en el
 servidor, y evitando as\'i que se tengan que realizar cargas posteriores.
@@ -1010,7 +982,7 @@ el contenido de los distintos ficheros al comenzar el proceso de an\'alisis,
 evitando as\'i, las distintas lecturas que habr\'ia que realizar por defecto en el
 funcionamiento de las herramientas utilizadas. De esta forma, para evitar estas
 m\'ultiple lecturas, se modific\'o la herramienta Scancode Toolkit para poder
-analizar el contenido de cada fichero directamente en lugar de leerlo dentro
+analizar el contenido de cada fichero directamente, en lugar de leerlo dentro
 del c\'odigo de esta herramienta.
 
 \end{itemize}
@@ -1027,15 +999,15 @@ estad\'isticos de los proyectos, adem\'as de su filtrado.
 La obtenci\'on de los datos de la base de datos de MySQL se realizar\'a mediante
 el uso de los modelos que nos da la funcionalidad de Django. De esta manera, al
 acceder a los recursos /all, /user o /legal, se realizar\'an las interacciones
-necesarias con la base de datos gracias a la sencilla interfaz que nos proporcionan
+necesarias con la base de datos, gracias a la sencilla interfaz que nos proporcionan
 estos modelos.
 
 Es necesario destacar que al tratarse de una base de datos relacional, se tendr\'a
-que acceder a las distintas tablas a las cuales pertenecen los datos de estas
+que acceder a las distintas tablas, a las cuales pertenecen los datos de estas
 relaciones, antes de elaborar la respuesta.
 
 La disposici\'on de las tablas presentes en la base de datos, adem\'as de las
-distintas relaciones entre ellas se puede observar en la figura~\ref{fig:database}.
+distintas relaciones entre ellas, se pueden observar en la figura~\ref{fig:database}.
 
 \begin{figure}
   \centering
@@ -1048,12 +1020,12 @@ En esta figura observamos las siguientes tablas de la base de datos:
 
 \begin{itemize}
 
-\item \textbf{Project}: En esta tabla contiene el nombre y la fecha de almacenamiento
-del proyecto, adem\'as del due\~no y los contribuidores del proyecto mediante unas relaciones
+\item \textbf{Project}: Esta tabla contiene el nombre y la fecha de almacenamiento
+del proyecto, adem\'as del due\~no y los contribuidores del mismo, mediante unas relaciones
 de Foreign Key y Many to Many respectivamente con la tabla de Contributor.
 
-\item \textbf{Contributor}: Donde se almacena el nombre, login e email del contribuidor,
-teniendo adem\'as el par login, email como clave \'unica de los contribuidores, de forma
+\item \textbf{Contributor}: Donde se almacena el nombre, login e email del contribuidor.
+Teniendo adem\'as el par login, email, como clave \'unica de los contribuidores. De forma
 que no podr\'an almacenarse dos contribuidores cuyos campos de login y email sean
 ambos iguales.
 
@@ -1061,15 +1033,13 @@ ambos iguales.
 utilizaremos esta tabla, donde se almacenan el path absoluto donde ha sido analizado
 el fichero y el lenguaje en que este est\'a programado. Adem\'as de esto, esta tabla
 estar\'a relacionada con las tablas Project, Copyright y License para determinar
-ar
 a que proyecto pertenece el archivo y que copyrights y licencias est\'an contenidas
-en el.
+en \'el.
 
 \item \textbf{Blame}: En la tabla Blame se almacenar\'an las contribuciones por cada
-fichero que ha realizado cada usuario. Esto se realizar\'a almacenando las lineas de
-c\'odigo que cada contribuidor ha realizado, guardando el id correspondiente con
-el contribuidor en la tabla Contributor en el campo author, y as\'i mismo
-con el fichero en el campo file.
+fichero que ha realizado cada usuario. As\'i, se almacenar\'an las lineas de
+c\'odigo que cada contribuidor ha realizado, guardando en el campo author, el id correspondiente con
+el contribuidor, y as\'i mismo con el fichero en el campo file.
 
 \item \textbf{Copyright}: Donde se almacena el nombre del copyright y a quien pertenece.
 
@@ -1087,9 +1057,9 @@ con la base de datos para poder obtener y enviar los distintos datos.
 \paragraph*{Estad\'isticas de proyecto}
 \label{paragraph:project_stats}
 
-Para la obtenci\'on de los datos globales de cada proyecto accederemos al recurso
+Para la obtenci\'on de los datos globales de cada proyecto, accederemos al recurso
 /analyze en cuya vista se realizar\'a una query sobre la tabla de proyectos en la
-que se traer\'an adem\'as los datos relacionados con la tabla de contribuidores.
+que se traer\'an adem\'as, los datos relacionados con la tabla de contribuidores.
 
 Tras realizar esta query se procesar\'an los datos para que sean serializables
 y para que tengan un formato JSON aceptable para el front-end programado en JavaScript.
@@ -1104,9 +1074,9 @@ de los datos del lenguaje de cada uno de ellos. Por \'ultimo, se har\'a una peti
 la tabla Blame que devolver\'a el n\'umero de lineas totales realizadas por cada autor en
 los distintos ficheros.
 
-Sobre estos datos se realizar\'a una suma mediante el m\'etodo count de SQL para cada valor diferente,
+Sobre estos datos se realizar\'a una suma, mediante el m\'etodo count de SQL, para cada valor diferente,
 gracias al m\'etodo de la interfaz que aporta Django con el mismo nombre. Obteniendo
-as\'i el numero total de lineas realizadas por cada autor y el n\'umero total de
+as\'i el n\'umero total de lineas realizadas por cada autor y el n\'umero total de
 copyrights, licencias y lenguajes diferentes.
 
 Por \'ultimo se procesar\'an los datos para adaptarlos al formato JSON, y adem\'as
@@ -1125,7 +1095,7 @@ Este filtrado se realizar\'a mediante el m\'etodo where del lenguaje SQL o en es
 caso, del m\'etodo filter de la API de Django models.
 
 Al igual que en el caso anterior, se realizar\'a un procesado final antes de enviar
-la respuesta con los datos obtenidos, filtrados y sumados.
+la respuesta con los datos obtenidos filtrados y sumados.
 
 \paragraph*{Estad\'isticas legales}
 \label{paragraph:legal_stats}
@@ -1134,10 +1104,9 @@ Por \'ultimo se obtendr\'an todos los ficheros filtrados por licencias o por
 copyrights.
 
 En este caso se realizar\'a un filtrado como en el caso anterior, pero con la
-diferencia de que en este caso se filtrar\'a de manera no estricta, es decir,
+diferencia de que, en este caso, se filtrar\'a de manera no estricta, es decir,
 valdr\'a con introducir una palabra contenida en los copyrights o licencias del fichero,
 para que este sea devuelto en la respuesta.
-
 
 \section{Front-end}
 \label{sec:front-end}
@@ -1165,7 +1134,7 @@ en una Single Page Application.
 
 \item \textbf{An\'alysis}: Accediendo a la API implementada en el servidor Django,
 obtiene los datos analizados del proyecto, y los almacena de modo que puedan ser usados
-por la plantilla HTML correspondiente a este m\'odulo y sus gr\'aficos.
+por la plantilla HTML correspondiente a este m\'odulo y por sus gr\'aficos.
 
 \item \textbf{Statistics}: En este m\'odulo al igual que en el de Analysis se
 obtendr\'an los datos de la API del servidor, y se mostrar\'an en tres plantillas
@@ -1174,7 +1143,7 @@ diferentes ya sean datos totales, de usuario o legales.
 \item \textbf{Navbar}: Es el m\'odulo que permite controlar el funcionamiento de
 la barra de navegaci\'on, permitiendo mostrar las secciones que contiene la p\'agina.
 
-\item \textbf{Chart}: El m\'odulo de Chart se crear\'an los gr\'aficos que nos
+\item \textbf{Chart}: En el m\'odulo de Chart se crear\'an los gr\'aficos que nos
 servir\'an para representar los datos de los m\'odulos de Analysis y Statistics.
 Por tanto estos dos m\'odulos tendr\'an una dependencia con el de Chart.
 
@@ -1194,17 +1163,17 @@ plantillas referenciadas dentro de cada directiva.
 
 Una vez mostrada la plantilla correspondiente a cada directiva, se permitir\'a
 mediante distintos formularios, la realizaci\'on de peticiones de datos a la base
-de datos tal y como se ha explicado anteriormente.
+de datos, tal y como se ha explicado anteriormente.
 
-Tras obtener la respuesta a las peticiones, se almacenar\'a en campos del elemento
-\textdollar scope de Angular, permitiendo mediante el Two Way Data Binding ya mencionado,
+Tras obtener la respuesta a las peticiones, esta se almacenar\'a en campos del elemento
+\textdollar scope de Angular. Permitiendo, mediante el Two Way Data Binding ya mencionado,
 la actualizaci\'on y representaci\'on de los datos en cada plantilla.
 
-Cabe mencionar, que en el caso de los gr\'aficos de la biblioteca D3 es necesario
+Cabe mencionar, que en el caso de los gr\'aficos de la biblioteca D3, es necesario
 actualizar el gr\'afico con los nuevos datos. Este proceso no es autom\'atico,
 por tanto se ha hecho uso del m\'etodo \textdollar watch para a\~nadir un manejador al evento de
-actualizaci\'on de los datos, as\'i cuanto este evento se produzca, se llamar\'a
-a una funci\'on que generar\'a el gr\'afico de nuevo y actualizado con los nuevos
+actualizaci\'on de los datos. As\'i, cuando este evento se produzca, se llamar\'a
+a una funci\'on que generar\'a el gr\'afico de nuevo y lo actualizar\'a con los nuevos
 datos.
 
 \section{Adaptaci\'on de la informaci\'on}
@@ -1225,10 +1194,10 @@ clave y un valor asociado a ella.
 
 Este formato permitir\'a una adecuada serializaci\'on desde el servidor al cliente
 para el correcto env\'io de la respuesta, y que en el front-end no se requiera ning\'un
-procesado especial de la respuesta, m\'as que el de un elemento JSON propio de JavaScript,
+procesado especial de la respuesta, m\'as que el de un elemento JSON propio de JavaScript
 y su posterior adaptaci\'on para su representaci\'on.
 
-La adaptaci\'on de la informaci\'on supone un elemento clave tambi\'en para considerar
+La adaptaci\'on de la informaci\'on supone un elemento clave tambi\'en para denominar a
 la API desarrollada como una API REST, puesto que esto conlleva una homogeneidad entre los
 recursos y el formato JSON permite dar esta homogeneidad a las respuestas de estos recursos.
 
@@ -1251,7 +1220,7 @@ Primero se mostrar\'a la interfaz de usuario de la aplicaci\'on en la que se rep
 los datos que se enumerar\'an en las secciones siguientes.
 
 En los dos primeros gr\'aficos se mostrar\'an los lenguajes utilizados y los colaboradores
-m\'as activos tal y como se muestra en la figura~\ref{fig:first_row}.
+m\'as activos tal y como se puede ver en la figura~\ref{fig:first_row}.
 
 \begin{figure}
   \centering
@@ -1260,7 +1229,7 @@ m\'as activos tal y como se muestra en la figura~\ref{fig:first_row}.
   \label{fig:first_row}
 \end{figure}
 
-En la segunda secci\'on, mostrada en la figura~\ref{fig:second_row} de gr\'aficos se mostrar\'an
+En la segunda secci\'on, mostrada en la figura~\ref{fig:second_row} se representar\'an
 las licencias y copyrights presentes en el proyecto.
 
 \begin{figure}
@@ -1270,7 +1239,7 @@ las licencias y copyrights presentes en el proyecto.
   \label{fig:second_row}
 \end{figure}
 
-Y por \'ultimo, en la tercera secci\'on se mostrar\'a una lista con el desglose de todos
+Y por \'ultimo, en la tercera secci\'on se ver\'a una lista con el desglose de todos
 los ficheros con su datos individuales. Esta secci\'on se muestra en la figura~\ref{fig:third_row}
 
 \begin{figure}
@@ -1280,7 +1249,7 @@ los ficheros con su datos individuales. Esta secci\'on se muestra en la figura~\
   \label{fig:third_row}
 \end{figure}
 
-Para mostrar unos resultados reales en esta interfaz, se analizar\'an distintos proyectos populares entre
+Para representar unos resultados reales en esta interfaz, se analizar\'an distintos proyectos populares entre
 la comunidad de Free Open Source Software. Entre estos proyectos se han elegido los
 repositorios de herramientas como Docker, Ruby, Swift, React, Apache/Storm, Apache/Spark,
 Scala, Go, etc.
@@ -1288,14 +1257,14 @@ Scala, Go, etc.
 \section{Informaci\'on general}
 \label{sec:general_info}
 
-En los distintos proyectos analizados, se puede comprobar una serie de caracter\'isticas
-comunes que var\'ian muy poco de uno a otro, no obstante, la informaci\'on obtenida de
+En los distintos proyectos analizados se puede comprobar una serie de caracter\'isticas
+comunes que var\'ian muy poco de uno a otro. No obstante, la informaci\'on obtenida de
 estas peque\~nas diferencias nos sirve para analizar el entorno en que estos proyectos
 han sido realizados. En este apartado se describir\'an las propiedades generales que
 comparten todos estos proyectos.
 
-Para analizar estos proyectos se ha recurrido a la plataforma Github en la que se puede
-acceder a sus repositorios. El hecho de que est\'en presentes de manera p\'ublica
+Para analizar los repositorios se ha recurrido a la plataforma Github en la que se puede
+acceder a ellos. El hecho de que est\'en presentes de manera p\'ublica
 en una plataforma en la que el c\'odigo es totalmente accesible, muestra las caracter\'isticas
 Free Open Source de dichos proyectos.
 
@@ -1307,7 +1276,7 @@ y de mejora.
 Por otra parte, la mayor\'ia de estos proyectos pertenecen a grandes empresas del sector tecnol\'ogico, que
 a pesar de ser lucrativas, han visto en el ecosistema Free Open Source el futuro del desarrollo software.
 Debido a la gran comunidad de desarrolladores presentes en este entorno, las empresas se benefician
-de la colaboraci\'on de programadores de todo el mundo para mejorar su software, de esta forma,
+de la colaboraci\'on de programadores de todo el mundo para mejorar su software. De esta forma,
 observamos un n\'umero de contribuidores muy elevado, y por consiguiente, un crecimiento de
 las dimensiones del proyecto proporcional a este n\'umero.
 
@@ -1315,7 +1284,7 @@ Esta es otra caracter\'istica fundamental de todos los proyectos FOSS si quieren
 Por un lado las empresas se benefician de la contribuci\'on de distintos colaboradores a los cuales incluso
 podr\'ian reclutar, y por otro, los contribuidores desarrollan tanto su carrera como sus habilidades program\'aticas.
 
-Por \'ultimo, adem\'as, de todas estas peculiaridades de los proyectos FOSS, se ha de destacar la reutilizaci\'on y
+Por \'ultimo, adem\'as de todas estas peculiaridades de los proyectos FOSS, se ha de destacar la reutilizaci\'on y
 mejora de herramientas y proyectos a la hora de desarrollar un nuevo software. Todos los proyectos analizados,
 basan su funcionamiento en otro software, ya sean lenguajes de programaci\'on, herramientas web, herramientas para
 la distribuci\'on de aplicaciones, etc. Lo cual hace de la colaboraci\'on de la comunidad, un factor imprescindible
@@ -1326,20 +1295,20 @@ A continuaci\'on se enumerar\'an las cualidades espec\'ificas de diferentes proy
 \section{Informaci\'on espec\'ifica de los proyectos}
 \label{sec:specific_info}
 
-En esta secci\'on se enumerar\'an los resultados obtenidos para tres tipos diferentes de proyectos,
-para herramientas de desarrollo software como son Angular y Docker, para lenguajes de programaci\'on como
-Ruby y Swift y por \'ultimo, para el repositorio del Kernel de Linux.
+En esta secci\'on se enumerar\'an los resultados obtenidos para tres tipos diferentes de proyectos.
+Para herramientas de desarrollo software como son Angular y Docker, para lenguajes de programaci\'on como
+Ruby y Swift y por \'ultimo, para herramientas de Big Data.
 
 \subsection{Herramientas para el desarrollo software}
 \label{subsec:software_tools}
 
-Docker y Angular son dos herramientas de software libre cuyas funciones son de plataforma para aplicaciones distribuidas
+Docker y Angular son dos herramientas de software libre, cuyas funciones son de plataforma para aplicaciones distribuidas
 y framework web respectivamente.
 
 Estas dos herramientas difieren en su funcionalidad, pero no tanto en sus caracter\'isticas Free Open Source.
 Ambos proyectos usan en la pr\'actica la licencia BSD-Modified mayoritariamente, como se muestra en las
 figuras~\ref{fig:angular_license} y~\ref{fig:docker_license}. Ya que aunque AngularJS presenta un 60% de sus archivos licenciados
-bajo la licencia MIT, al ser esta una licencia muy permisiva, y permitir ser incorporada bajo otras licencias,
+bajo la licencia MIT, al ser esta una licencia muy permisiva y ser compatible con otras licencias,
 en Angular se hace uso de la licencia BSD la cual es m\'as restrictiva que la MIT License.
 
 \begin{figure}
@@ -1361,20 +1330,20 @@ Los permisos que se otorgan a ambos proyectos mediante la licencia BSD-Modified 
 \begin{itemize}
 	\item \textbf{Uso comercial}: Permiso para utilizar el c\'odigo con prop\'ositos comerciales y lucrativos.
 
-	\item \textbf{Modificaci\'on}: Permiso para modificar y crear proyectos derivados del c\'odigo que al que da licencia.
+	\item \textbf{Modificaci\'on}: Permiso para modificar y crear proyectos derivados del c\'odigo original.
 
 	\item \textbf{Distribuci\'on}: Permiso para distribuir el c\'odigo original o cualquier derivado del mismo.
 
 	\item \textbf{Compatibilidad de licencias}: La licencia BSD es compatible con cualquier otra licencia de software libre.
 \end{itemize}
 
-Adem\'as, la licencia MIT otorga permisos de utilizar AngularJS para uso privado.
+Adem\'as, la licencia MIT otorga permisos especificos de utilizar AngularJS para uso privado.
 
 Por otro lado, la licencia BSD-Modified restringe el uso del c\'odigo de los siguientes modos:
 
 \begin{itemize}
 	\item \textbf{Uso de Trademarks}: No se permite usar el nombre de empresas o marcas registradas en el c\'odigo
-	para ratificar o beneficiar la popularidad de un trabajo derivado del original, perteneciente a esa empresa o marca registrada.
+	para ratificar o beneficiar la popularidad de un trabajo derivado del original.
 
 	\item \textbf{Responsabilizaci\'on}: No se responsabilizar\'a al autor del software por ning\'un perjuicio ocasionado.
 
@@ -1384,9 +1353,8 @@ Por otro lado, la licencia BSD-Modified restringe el uso del c\'odigo de los sig
 	\item \textbf{Inclusi\'on de licencia}: Se deber\'a conservar siempre el texto completo de la licencia BSD.
 \end{itemize}
 
-Estas restricciones salvo la del uso de Trademarks se aplican tambi\'en a trav\'es de la licencia MIT en el caso de Angular.
-Pero al usarse las licencias MIT y BSD conjuntamente se aplican las restricciones de ambas si aparecen las dos en el c\'odigo
-como es el caso del proyecto Angular.
+Estas restricciones salvo la del uso de Trademarks se aplican tambi\'en a trav\'es de la licencia MIT, en el caso de Angular.
+Pero al usarse las licencias MIT y BSD conjuntamente, se aplican las restricciones de ambas.
 
 Adem\'as de las licencias, cabe destacar el uso de determinados lenguajes en estas herramientas. Por un lado, Docker utiliza
 Go como lenguaje principal tal y como se muestra en la figura~\ref{fig:docker_lang}, este lenguaje es tambi\'en Free Open Source,
@@ -1401,8 +1369,8 @@ pero sin que esto suponga un recorte en los derechos de utilizaci\'on de Go por 
 \end{figure}
 
 Por otro lado, en Angular los principales lenguajes de programaci\'on son TypeScript y Dart, que utilizan licencias Apache
-y BSD respectivamente tal y como se ve en la figura~\ref{fig:angular_lang}. En este caso, las dos, al igual que en el caso de Docker,
-son licencias libres. Y Apache al igual que en el caso anterior, otorga derecho de patente a Microsoft sobre TypeScript
+y BSD respectivamente, tal y como se ve en la figura~\ref{fig:angular_lang}. En este caso, los dos, al igual que en el caso de Docker,
+tienen licencias libres. Y Apache al igual que en el caso anterior, otorga derecho de patente a Microsoft sobre TypeScript,
 sin que esto suponga una p\'erdida de derechos por parte de Google sobre Angular.
 
 \begin{figure}
@@ -1412,24 +1380,23 @@ sin que esto suponga una p\'erdida de derechos por parte de Google sobre Angular
   \label{fig:angular_lang}
 \end{figure}
 
-%Bibliografia licencias y compatibilidad entre licencias
-
 \subsection{Repositorios de lenguajes de programaci\'on}
 \label{subsec:languages_repos}
 
 Adem\'as del an\'alisis de herramientas concretas y de m\'as alto nivel, se decidi\'o analizar tambi\'en proyectos
-correspondientes a lenguajes de programaci\'on para, adem\'as de ver sus car\'acteristicas legales en cuanto
-si son libres y abiertos, conocer los lenguajes y herramientas en los que se basan a su vez estos lenguajes.
+correspondientes a lenguajes de programaci\'on para, adem\'as de ver sus car\'acteristicas legales en cuanto a
+si son libres y abiertos, conocer los lenguajes y herramientas en los que se basan, a su vez, estos lenguajes.
 
 Los lenguajes seleccionados, por ser relativamente modernos y con un nivel de abstracci\'on superior a los que daban
 lenguajes como C o C++, son Ruby y Swift.
 
 Ruby por su parte es un lenguaje dise\~nado y desarrollado por Yukihiro Matsumoto en 1995 y que tal y como se puede ver
-en la figura~\ref{fig:ruby_lang}, consta de una serie de ficheros escritos en Ruby que corresponden con librer\'ias y funcionalidad
-espec\'ifica del lenguaje, pero una vez observamos el c\'odigo del propio lenguaje, podemos comprobar que este est\'a programado
+en la figura~\ref{fig:ruby_lang}, consta de una serie de ficheros escritos en Ruby, que corresponden con librer\'ias y funcionalidad
+espec\'ifica del lenguaje. Pero una vez observamos el c\'odigo del propio lenguaje, podemos comprobar que est\'a programado
 en C. Esta situaci\'on se da en la mayor\'ia de lenguajes modernos, que se basan en C, C++ y sus derivados, debido
-a la libertad de uso que estos proporcionan, permitiendo al desarrollador controlar todos los aspectos de su software.
-Utilizando este lenguaje como interprete, se otorga al nuevo lenguaje, en este caso Ruby, un mayor nivel de abstracci\'on
+a la libertad de uso que estos proporcionan, permitiendo al desarrollador controlar todos los aspectos de su software
+de maner muy cercana al sistema operativo.
+Utilizando este lenguaje como base, se otorga al nuevo lenguaje, en este caso Ruby, un mayor nivel de abstracci\'on
 que a pesar de restringir la libertad en su uso, proporciona una mayor simplicidad al mismo.
 
 \begin{figure}
@@ -1448,7 +1415,7 @@ otorga derechos de patente al desarrollador. En casos anteriores ya ha aparecido
 la licencia no afectaba a la herramienta que utilizaba ese lenguaje de programaci\'on porque
 se restring\'ia \'unicamente a su uso, y en ning\'un momento modificaba el c\'odigo de dicho lenguaje.
 En caso de que se quisiera modificar Swift, cualquier modificaci\'on realizada sobre el c\'odigo supondr\'ia que
-el colaborador tiene que dar una licencia a todos los usuarios de cualquier patente que pueda poseer sobre esa
+el colaborador tiene que dar una licencia a todos los usuarios, de cualquier patente que pueda poseer sobre esa
 colaboraci\'on.
 
 \begin{figure}
@@ -1458,11 +1425,11 @@ colaboraci\'on.
 	\label{fig:swift_license}
 \end{figure}
 
-Esta restricci\'on mitiga el problema de las patentes en el desarrollo de software libre, evitando que si alguien
+Esta restricci\'on mitiga el problema de las patentes en el desarrollo de software libre, evitando que, si alguien
 intenta apropiarse de una patente mediante un tr\'amite legal, sean revocados sus derechos de patente sobre todo
 el software o sobre las secciones de software en las cuales colabor\'o.
 
-Este tipo de licencias est\'an proliferando m\'as \'ultimamente, para ayudar a grandes empresas como Apple o Google,
+Este tipo de licencias est\'an proliferando m\'as \'ultimamente para ayudar a grandes empresas como Apple o Google,
 a sentirse m\'as c\'omodas al hacer que su software pertenezca a la comunidad Free Open Source.
 
 \subsection{Herramientas de Big Data}
@@ -1479,8 +1446,8 @@ de patente para todos sus colaboradores.
 
 Por otro lado, si analizamos los lenguajes utilizados en estos dos proyectos, comprobamos
 que ambos contienen, en su mayor\'ia, c\'odigo escrito en Java y Scala, estos dos lenguajes
-son muy comunes en el an\'alisis de grandes cantidades de datos. Por su simplicidad
-y escalabilidad, Scala se ha convertido en uno de los lenguajes de programaci\'on
+son muy comunes en el an\'alisis de grandes cantidades de datos, por su simplicidad
+y escalabilidad. Scala se ha convertido en uno de los lenguajes de programaci\'on
 principales para el desarrollo de herramientas de Big Data.
 
 \section{Lenguajes utilizados}
@@ -1491,7 +1458,7 @@ diferentes de proyectos de software libre. A partir de ese an\'alisis podemos es
 el uso de diferentes tipos de lenguajes en funci\'on de las cualidades y objetivos del
 proyecto analizado.
 
-En el caso de proyectos que implementan nuevos lenguajes de programaci\'on se observa
+En el caso de proyectos que implementan nuevos lenguajes de programaci\'on, se observa
 el uso generalizado de C, C++ y sus derivados, al ser estos lenguajes de programaci\'on
 de bajo nivel, que permiten implementar interfaces entre los procesos y el control de
 la memoria propios de lenguajes como C, para que el nuevo lenguaje alcance un mayor grado de abstracci\'on.
@@ -1504,7 +1471,7 @@ nivel como pueden ser Ruby, Python, Go, Scala, JavaScript e incluso Java.
 Adem\'as, en funci\'on de las necesidades de la herramienta como ya se ha mostrado,
 predominar\'a el uso de un lenguaje u otro. De esta forma, para frameworks web en el
 front-end se suele utilizar JavaScript, para an\'alisis de Big Data se suele
-utilizar Scala por su escalabilidad y para proyectos de machine learning se suele
+utilizar Scala por su escalabilidad, y para proyectos de machine learning se suele
 utilizar Python entre otros por el gran n\'umero de librer\'ias que presenta el
 lenguaje para este prop\'osito.
 
@@ -1517,11 +1484,11 @@ anteriormente recogidos.
 Tras la obtenci\'on de los datos anteriores, se pudo comprobar la importancia del software libre en el desarrollo de los nuevos
 proyectos de software, ya sea para empresas con \'animo de lucro o desarrolladores particulares. El mundo del desarrollo software
 se basa en la comunidad, en la reutilizaci\'on de herramientas y en el intercambio de conocimientos para alcanzar los
-objetivos marcados en cada proyecto.
+objetivos marcados en cada proyecto. Por tanto, se deber\'ia fomentar el uso de software basado en estos principios.
 
 Al analizar los proyectos mencionados en la secci\'on \ref{sec:specific_info} se ha obtenido una mejor visi\'on de las libertades que proporciona
 el software libre y los matices que existen dentro del mismo, porque aunque todo el software analizado sea
-libre, las diferentes licencias analizadas, otorgan ciertas cualidades diferentes a cada proyecto.
+libre, las diferentes licencias, otorgan distintas cualidades a cada proyecto.
 
 La principal cualidad diferenciada entre las licencias es el uso del derecho de patente~\cite{licencias}. Este derecho, como ya se ha
 explicado anteriormente, impide al desarrollador apropiarse de un proyecto determinado mediante acciones legales,
@@ -1529,7 +1496,7 @@ dando as\'i una cualidad importante a los nuevos proyectos de software libre que
 a\'un m\'as y que empresas de software propietario o que busquen lucrarse del software que producen, como pueden ser
 Apple y Google, inviertan y se involucren a\'un m\'as en la comunidad de proyectos FOSS.
 
-La presencia de estas compa\~nias podr\'a influenciar a otras grandes empresas y a futuras potencias del sector
+La presencia de estas compa\~nias podr\'a influenciar a otras grandes empresas, y a futuras potencias del sector,
 a seguir colaborando y hacer que el software libre se generalice en el mundo tecnol\'ogico, de lo que se podr\'an
 beneficiar usuarios, empresas y desarrolladores por igual.
 
@@ -1548,7 +1515,7 @@ y que adem\'as se puedan desarrollar aplicaciones con este lenguaje de manera m\
 
 Por \'ultimo cabe mencionar que todos los proyectos actuales se caracterizan por su alto nivel de abstracci\'on, y por
 tanto necesitan del uso de herramientas y lenguajes de programaci\'on de software libre desarrollados con anterioridad.
-Esta caracter\'istica satisface la necesidad de reutilizaci\'on del c\'odigo libre y abierto, presente en estos proyectos
+Esta caracter\'istica satisface la necesidad de reutilizaci\'on del c\'odigo libre y abierto, presente en estos proyectos,
 y promueve adem\'as la creaci\'on de nuevas herramientas que satisfagan nuevas necesidades.
 
 
@@ -1561,7 +1528,7 @@ y promueve adem\'as la creaci\'on de nuevas herramientas que satisfagan nuevas n
 \chapter{Conclusiones}
 \label{chap:conclusiones}
 
-En esta secci\'on se determinar\'an los determinaciones finales que se extraen de
+En esta secci\'on se explicar\'an las determinaciones que se extraen de
 la finalizaci\'on de este proyecto, valorando el cumplimiento de los objetivos
 puestos inicialmente y las lecciones aprendidas mediante su realizaci\'on y el
 proceso de investigaci\'on.
@@ -1572,7 +1539,7 @@ proceso de investigaci\'on.
 Tras la finalizaci\'on del proyecto, se puede determinar que todos los objetivos
 previamente fijados han sido realizados con \'exito y que por tanto se ha alcanzado
 satisfactoriamente el objetivo principal de realizar el an\'alisis de distintos
-proyectos FOSS para su posterior an\'alisis y comprensi\'on de los datos obtenidos como
+proyectos FOSS para el posterior an\'alisis y comprensi\'on de los datos obtenidos como
 se ha realizado en la secci\'on~\ref{sec:consecuencias}.
 
 A continuaci\'on se enumerar\'an los resultados obtenidos para cada objetivo enumerado en
@@ -1581,7 +1548,7 @@ el cap\'itulo~\ref{chap:objetivos}:
 \begin{itemize}
 
 \item Se consigui\'o utilizar la herramienta Scancode Toolkit para analizar distintos
-proyectos que sirivieran de ejemplo para los datos a almacenar en la base de datos.
+proyectos que sirvieran de ejemplo para los datos a almacenar en la base de datos.
 
 \item Se consigui\'o establecer la estructura de una aplicaci\'on Django con modelos
 que permitieran realizar la posterior interfaz con la base de datos.
@@ -1591,20 +1558,20 @@ proyecto Angular, para poder almacenar de manera m\'as adecuada los datos obteni
 del an\'alisis.
 
 \item Se desarroll\'o una API REST que interact\'ua con la herramienta Scancode Toolkit
-y la API de Github para devolver en formato JSON los datos correspondientes en cada
+y la API de Github para devolver en formato JSON los datos correspondientes a cada
 proyecto.
 
 \item Se almacenaron distintos proyectos de importancia dentro del entono Open Source
 para que su an\'alisis pudiera servir para comprender mejor su ecosistema.
 
-\item Se realiz\'o la estrcutura Angular en el lado del cliente de la aplicaci\'on,
-incluyendo en ella distintas directivas para permitir la representaci\'on de los datos
+\item Se realiz\'o la estructura Angular en el lado del cliente de la aplicaci\'on,
+incluyendo en ella, distintas directivas para permitir la representaci\'on de los datos
 mediante gr\'aficos de la librer\'ia nvd3.js.
 
 \end{itemize}
 
 Es necesario mencionar tambi\'en que aunque el funcionamiento del analizador de
-proyectos funciona adecuadamente, es necesario que se mejore su rendimiento en
+proyectos es adecuado, es necesario que se mejore su rendimiento en
 trabajos futuros. Se trat\'o de analizar proyectos como el repositorio de Linux,
 pero por su tama\~no, el analizador tardaba demasiado, lo que produc\'ia que en el
 momento de almacenar el proyecto en la base de datos, el servidor de MySQL se hubiera
@@ -1613,7 +1580,7 @@ cerrado.
 \section{Aplicaci\'on de lo aprendido}
 \label{sec:aplicacion}
 
-Para poder enumerar los conociemientos obtenidos en la carrera y que se han puesto
+Para poder enumerar los conocimientos obtenidos en la carrera y que se han puesto
 en pr\'actica en este proyecto, se enumerar\'a cada asignatura y los conocimientos
 aplicados que se aprendieron en dicha asignatura.
 
@@ -1625,10 +1592,10 @@ aplicados que se aprendieron en dicha asignatura.
   de proyectos de software y la utilizaci\'on y comprensi\'on de las bases de datos.
 
   \item \textbf{Desarrollo de Aplicaciones Telem\'aticas}: La implementaci\'on de
-  interfaces de usuario con cierto nivel de complejidad tanto visual como funcional.
+  interfaces de usuario con cierto nivel de complejidad, tanto visual como funcional.
 
   \item \textbf{Sistemas Operativos}: Aplicaci\'on de programaci\'on concurrente
-  y la compresi\'on de procesos de sistemas operativos.
+  y la comprensi\'on de procesos de sistemas operativos.
 
   \item \textbf{Ingenier\'ia de Sistemas Telem\'aticos}: Aplicaci\'on de programaci\'on
   orientada a objetos.
@@ -1645,13 +1612,13 @@ acerca de los siguientes temas:
   desarrollo en funci\'on de los avances conseguidos.
 
   \item Investigar y comparar las distintas herramientas presentes para realizar
-  una determinada tarea y escoger aquella que aporte los mayores beneficios al proyecto.
+  una determinada tarea, y escoger aquella que aporte los mayores beneficios al proyecto.
 
   \item Analizar el funcionamiento del software para mejorar su implementaci\'on y
   el rendimiento que genera, adem\'as de la utilizaci\'on de herramientas de profiling
-  para determinar mediante datos num\'ericos, la eficiencia del c\'odigo.
+  para determinar, mediante datos num\'ericos, la eficiencia del c\'odigo.
 
-  \item Desarrollar todo el stack de una aplicaci\'on web, y a estructurar adecuadamente
+  \item Desarrollar todo el stack de una aplicaci\'on web, y estructurar adecuadamente
   el c\'odigo tanto en el cliente como en el servidor.
 
   \item Desarrollar software que permita atajar problemas de la vida real, analizando
@@ -1670,15 +1637,15 @@ el desarrollo de este proyecto.
 
 Aunque los objetivos planteados en este proyecto se han completado, ning\'un
 proyecto software llega a cumplir a la perfecci\'on las ideas preliminares que se
-tienen sobre \'el.
+tienen sobre \'el, al menos en su primera versi\'on.
 
-Este proyecto se centr\'o en el an\'alisis de proyectos concretos que puedan ser
+Este proyecto se centr\'o en el an\'alisis de proyectos concretos, que puedan ser
 un buen ejemplo de las caracter\'isticas generales de los proyectos de software abierto
 y libre, sin embargo, ser\'ia una buena mejora si se realizara un an\'alisis masivo
 de un mayor n\'umero de proyectos y que obtengan un mayor n\'umero de datos diferentes.
 
 Esta mejora supondr\'ia la utilizaci\'on de metodolog\'ias de Big Data para el filtrado
-de los datos y la obtenci\'on de los datos determinantes para nuestro an\'alisis,
+y la obtenci\'on de los datos determinantes para nuestro an\'alisis,
 poblando la base de datos con informaci\'on relevante para el an\'alisis deseado.
 
 Adem\'as, para mejorar el funcionamiento del an\'alisis y la obtenci\'on de los datos
@@ -1690,17 +1657,17 @@ demasiado alto.
 \label{sec:valoracion}
 
 El hecho de que este proyecto se centrara en el software libre y la posibilidad
-de analizar proyectos importantes que se usan comunmente a la hora de desarrollar cualquier
+de analizar proyectos importantes que se usan com\'unmente a la hora de desarrollar cualquier
 proyecto software, incluyendo algunas de las que he utilizado en la carrera y en mi tiempo
 libre, supuso un aliciente para m\'i a la hora de escoger este proyecto.
 
 Las ideas y libertades que representa el software libre, representan en mi opini\'on
-unos ideales que deber\'ian promoverse y darse a conocer, ya que todo el mundo deber\'ia
-tener derecho a cualquier tipo de software ya que nadie puede ser due\~no o ideador
-absoluto de un determinado software, ya que en su gran mayor\'ia, todos estos proyectos
-se derivan de otros desarrollados en el pasado y que permitieron sentar las bases de lo que
+unos ideales que deber\'ian promoverse y darse a conocer. Todo el mundo deber\'ia
+tener derecho a acceder a cualquier tipo de software, ya que nadie puede ser su due\~no o inventor
+absoluto. En su gran mayor\'ia, todos los proyectos de software
+se derivan de otros desarrollados en el pasado, y que permitieron sentar las bases de lo que
 se esta desarrollando ahora, as\'i como los actuales proyectos sentar\'an las bases
-de los proyectos del futuro.
+del software del futuro.
 
 Por esta raz\'on se deber\'ia tener una mentalidad global a la hora de desarrollar
 software, y esta es la finalidad intr\'inseca de este proyecto, mentalizar y mostrar
@@ -1718,6 +1685,87 @@ el uso y promoci\'on del Free Open Source Software.
 \chapter{Manual de usuario}
 \label{app:manual}
 
+Para poder desarrollar este proyecto se tuvo que utilizar Django,
+que se puede instalar con el siguiente comando.
+
+\begin{lstlisting}[language=bash]
+  $ pip install -e django
+\end{lstlisting}
+
+Posteriormente, se inicializ\'o un proyecto y aplicaci\'on Django escribiendo en la
+terminal, los siguientes comandos:
+
+\begin{lstlisting}[language=bash]
+  $ django-admin startproject mysite
+  $ python manage.py startapp myapp
+\end{lstlisting}
+
+Posteriormente para arrancar la aplicaci\'on y ver el resultado se utilizar\'a
+el siguiente comando.
+
+\begin{lstlisting}[language=bash]
+  $ python manage.py runserver
+\end{lstlisting}
+
+Y adem\'as, para poder migrar los cambios realizados sobre los modelos a la base
+de datos, se aplicar\'an los siguientes comandos de manera consecutiva.
+
+\begin{lstlisting}[language=bash]
+  $ python manage.py makemigrations
+  $ python manage.py migrate
+\end{lstlisting}
+
+Adem\'as de Django, se utilizaron librer\'ias python externas cuya instalaci\'on
+se realiz\'o mediante los siguientes comandos:
+
+\begin{lstlisting}[language=bash]
+  $ pip install pygments
+  $ pip install gitpython
+\end{lstlisting}
+
+Tambi\'en, se tuvo que modificar el archivo settings.py del proyecto Django,
+para utilizar un tipo de base de datos MySQL, a\~nadiendo esta l\'inea.
+
+\begin{lstlisting}[language=python]
+  DATABASES = {
+      'default': {
+            'ENGINE': 'django.db.backends.mysql',
+            ...
+      }
+  }
+\end{lstlisting}
+
+Por \'utlimo, estos son los repositorios Github de la herramienta Scancode Toolkit
+y de este proyecto.
+
+\begin{lstlisting}[language=bash]
+  https://github.com/nexB/scancode-toolkit
+  https://github.com/jperaltar/FOSS_Analysis
+\end{lstlisting}
+
+\chapter{Planificaci\'on temporal}
+\label{app:planificacion}
+
+En esta tabla se muestra la planifiaci\'on temporal general del proceso de
+realizaci\'on del proyecto.
+
+\begin{figure}[H]
+	\centering
+	\includegraphics[width=16cm, keepaspectratio]{img/planificacion}
+\end{figure}
+
+En general se siguieron los tiempos marcados aunque por diversos imprevistos,
+en ocasiones se tuvo que usar parte del tiempo especificado en cada semana para
+la realizaci\'on de cada tarea, en la correcci\'on o mejora de distintas secciones
+del proyecto.
+
+Adem\'as, esta tabla incluye \'unicamente el periodo de tiempo en desde que se
+comenz\'o a desarrollar el proyecto hasta el momento de su finalizaci\'on.
+El proceso inicial de planteamiento del problema y la elecci\'on del enfoque
+que se iba a tomar para definir el objetivo final y secundario del problema, tuvo
+lugar durante todo el a\~no anterior a la iniciaci\'on, justo desde el momento en
+que se comenz\'o a plantear la realizaci\'on de este proyecto, con el Profesor
+Gregorio Robles Mart\'inez.
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%

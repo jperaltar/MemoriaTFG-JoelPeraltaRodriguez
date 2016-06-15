@@ -32,6 +32,7 @@
 \usepackage{latexsym}  %% Logo LaTeX
 \usepackage{titlesec}
 \setcounter{secnumdepth}{4}
+\usepackage{listings}
 
 \title{Memoria del Proyecto}
 \author{Nombre del autor}
@@ -75,7 +76,7 @@
 \vspace{3cm}
 
 \Large
-Grado en tecnolog\'ias de las telecomunicaciones
+Grado en Tecnolog\'ias de las Telecomunicaciones
 
 \vspace{0.4cm}
 
@@ -94,7 +95,7 @@ An\'alisis de proyectos FOSS
 \vspace{4cm}
 
 \large
-Autor : Joel Peralta Rodr\'iguez
+Autor : Joel Peralta Rodr\'iguez \\
 Tutor : Dr. Gregorio Robles
 \end{center}
 \end{titlepage}
@@ -121,13 +122,13 @@ An\'alisis de proyectos FOSS
 
 \vspace{1cm}
 \large
-\textbf{Autor :} Joel Peralta Rodr\'iguez
+\textbf{Autor :} Joel Peralta Rodr\'iguez \\
 \textbf{Tutor :} Dr. Gregorio Robles Mart\'inez
 
 \end{center}
 
 \vspace{1cm}
-La defensa del presente Proyecto Fin de Carrera se realiz\'o el d\'ia \qquad$\;\,$ de \qquad\qquad\qquad\qquad \newline de 20XX, siendo calificada por el siguiente tribunal:
+La defensa del presente Proyecto Fin de Carrera se realiz\'o el d\'ia \qquad$\;\,$ de junio de 2016, siendo calificada por el siguiente tribunal:
 
 
 \vspace{0.5cm}
@@ -149,7 +150,7 @@ y habiendo obtenido la siguiente calificaci\'on:
 
 \vspace{1cm}
 \begin{flushright}
-Fuenlabrada, a \qquad$\;\,$ de \qquad\qquad\qquad\qquad de 20XX
+Fuenlabrada, a \qquad$\;\,$ de junio de 2016
 \end{flushright}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -159,7 +160,7 @@ Fuenlabrada, a \qquad$\;\,$ de \qquad\qquad\qquad\qquad de 20XX
 \pagenumbering{Roman} % para comenzar la numeracion de paginas en numeros romanos
 \begin{flushright}
 \textit{Dedicado a \\
-mi familia / mi abuelo / mi abuela}
+mis padres, mi hermana y mi novia}
 \end{flushright}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -169,10 +170,41 @@ mi familia / mi abuelo / mi abuela}
 %\addcontentsline{toc}{chapter}{Agradecimientos} % si queremos que aparezca en el �ndice
 \markboth{AGRADECIMIENTOS}{AGRADECIMIENTOS} % encabezado
 
-Aqu\'i vienen los agradecimientos\ldots Aunque est\'a bien acordarse de la pareja,
-no hay que olvidarse de dar las gracias a tu madre, que aunque a veces no lo
-parezca disfrutar\'a tanto de tus logros como t\'u\ldots Adem\'as, la pareja quiz\'as
-no sea para siempre, pero tu madre s\'i.
+Tras unos a\~nos que han pasado como una monta\~na rusa, con sus momentos altos y bajos,
+me gustar\'ia acordarme de las personas que me han ayudado en todos esos momentos
+para llegar a este punto, en el cual, mediante este proyecto, se cierra una etapa muy bonita y estresante de mi vida,
+y se abre otra que ser\'a a\'un m\'as bonita y seguramente, muchisimo m\'as estresante.\par
+
+En primer lugar querr\'ia agradecer a mi tutor en este proyecto, el profesor D. Gregorio
+Robles Mart\'inez, su apoyo y sus consejos, no solo para la realizaci\'on del trabajo
+de fin de grado, sino para la busqueda de motivaciones y retos para mi futura carrera
+profesional.\par
+
+Querr\'ia valorar y agradecer tambi\'en el esfuerzo, tanto econ\'omico como mental, que supone
+tener a un protoingeniero en casa. Por este esfuerzo, mis padres y mi hermana merecen todo
+el recnonocimiento por mi parte, porque sin ellos, yo no estar\'ia donde estoy,
+porque su apoyo, ha sido esencial para no volverme loco y ellos conmigo, y porque
+ver el orgullo y el cari\~no que sienten por mi, hace que me esfuerce a\'un m\'as cada d\'ia.\par
+
+Tambi\'en querr\'ia agradecerle a mis abuelos, primas y primos, t\'ias y t\'ios,
+a toda mi familia, las palabras de \'animo y la f\'e y orgullo que mostraron tener
+por mi, que en ocasiones lleg\'o a superar la m\'ia propia.\par
+
+A mis compa\~neros de carrera de los que he aprendido mucho y a los que espero tambi\'en
+haberles dejado un buen recuerdo. En especial a Jos\'e con el que he estado estos cuatro
+a\~nos y con el que he compartido \'exitos y derrotas.\par
+
+Y adem\'as de mis compa\~neros de carrera, tambi\'en a mis compa\~neros en el trabajo,
+que me trataron como uno m\'as desde el principio y con los que he aprendido mucho en
+este corto periodo de tiempo.\par
+
+Y por \'ultimo, agradecerle a una persona muy especial que a pesar de la distancia,
+comparte conmigo todos mis sinsabores y festeja conmigo las victorias.
+Mi novia Carmen, que ha conseguido hacer de este estudiante, un futuro ingeniero muy
+feliz, con su apoyo constante y su cari\~no sincero.\par
+
+A todos ellos, y en especial mi familia y mi novia, gracias por hacer que este reto
+haya sido abordable. Muchas gracias.
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%% Resumen
@@ -181,18 +213,21 @@ no sea para siempre, pero tu madre s\'i.
 %\addcontentsline{toc}{chapter}{Resumen} % si queremos que aparezca en el �ndice
 \markboth{RESUMEN}{RESUMEN} % encabezado
 
-Aqu\'i viene un resumen del proyecto. Ha de constar de tres o cuatro p\'arrafos,
-donde se presente de manera clara y concisa de qu\'e va el proyecto. Han
-de quedar respondidas las siguientes preguntas:
-
-\begin{itemize}
-  \item ?`De qu\'e va este proyecto? ?`Cu\'al es su objetivo principal?
-  \item ?`C\'omo se ha realizado? ?`Qu\'e tecnolog\'ias est\'an involucradas?
-  \item ?`En qu\'e contexto se ha realizado el proyecto? ?`Es un proyecto
-dentro de un marco general?
-\end{itemize}
-
-Lo mejor es escribir el resumen al final.
+En este proyecto se pretende dar a conocer el ecosistema de proyectos de software
+libre y abierto, para mostrar los beneficios sociales y t\'ecnicos de su uso en la industria.\par
+\vspace{0.3cm}
+En un entorno en el que la tecnolog\'ia interviene en muchos aspectos de nuestras vidas,
+la importancia de que esta tecnolog\'ia se desarrolle por y para las personas, es
+cada vez m\'as importante.\par
+\vspace{0.3cm}
+Por tanto, gracias a la utilizaci\'on de herramientas de an\'alisis de ficheros y repositorios,
+como Scancode Toolkit, GithubAPI y diferentes librer\'ias Python, se realizar\'an
+an\'alisis de proyectos de referencia en la comunidad Open Source, de los cuales se obtendr\'an
+datos legales, t\'ecnicos y sociales.\par
+\vspace{0.3cm}
+Esto nos permitir\'a conocer en profundidad las caracter\'isticas y la importancia de este tipo de
+proyectos en el sector tecnol\'ogico y del desarrollo de software, adem\'as de
+su repercusi\'on en la sociedad.
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%% Resumen en ingl\'es
@@ -201,13 +236,21 @@ Lo mejor es escribir el resumen al final.
 %\addcontentsline{toc}{chapter}{Summary} % si queremos que aparezca en el �ndice
 \markboth{SUMMARY}{SUMMARY} % encabezado
 
-Here comes a translation of the ``Resumen'' into English. Please, double check
-it for correct grammar and spelling. As it is the translation of the ``Resumen'',
-which is supposed to be written at the end, this as well should be followed out
-just before submitting.
+This project aims to be an introduction to the free and open source software ecosystem,
+showing the social and technical benefits of its use in the industry.\par
+\vspace{0.3cm}
+In an environment where technology is present in every aspect of our lives,
+the importance of this technology being developed by people and for people, is
+more and more important.\par
+\vspace{0.3cm}
+Therefore, using file and repository analyzer tools like Scancode Toolkit, GithubAPI
+and several Python libraries, we will analyze projects of high importance in the
+Open Source community, from which we will obtain legal, technical and social data.\par
+\vspace{0.3cm}
+This will allow us to know in deep the characteristics and the importance of this
+type of projects in the technological and software developing fields, as well
+as its repercussion in society.
 
-
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % ÍNDICES %
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -235,11 +278,11 @@ just before submitting.
 
 \cleardoublepage
 \chapter{Introducci\'on}
-\label{sec:intro} % etiqueta para poder referenciar luego en el texto con ~\ref{sec:intro}
+\label{sec:intro} % etiqueta para poder referenciar luego en el texto con~\ref{sec:intro}
 \pagenumbering{arabic} % para empezar la numeración de página con números
 
 En este proyecto se ha realizado un an\'alisis del ecosistema de proyectos de
-software libre que podemos encontrar en la red, centrandose especialmente en
+software libre que podemos encontrar en la red, centr\'andose especialmente en
 la plataforma Github. Mediante este an\'alisis se ha intentado dar a conocer las
 caracter\'isticas de este entorno adem\'as de determinar las peculiaridades que
 aportan los datos obtenidos a la formaci\'on y desarrollo del Free Open Source Software.
@@ -399,7 +442,7 @@ analizar proyectos desde la terminal de Unix y posteriormente analizar la
 infomaci\'on devuelta por dicha herramienta.
 
 \item Inicializar el proyecto Django/Python que albergar\'a la aplicaci\'on
-web en la que se engloba el an\'alisis de proyectos mencionado anteriormente.
+web en la que se engloba el an\'alisis de proyectos.
 
 \item Adaptar la herramienta para ser usada como un m\'odulo de Python
 y poder tener mayor versatilidad al analizar proyectos en distintos formatos.
@@ -428,7 +471,7 @@ que ayuden a sacar conclusiones del entorno Open Source.
 \label{sec:planificacion-temporal}
 
 La planificaci\'on temporal del proyecto queda representada por el gr\'afico del
-ap\'endice X para una mejor comprensi\'on de los plazos tomados para la consecuci\'on
+ap\'endice~\ref{app:planificacion} para una mejor comprensi\'on de los plazos tomados para la consecuci\'on
 de los distintos objetivos.
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -457,8 +500,8 @@ cualidades espec\'ificas por las cuales han sido utilizadas.
 
 Para entender el concepto de FOSS, se explican a continuaci\'on los requisitos
 del software para ser libre y abierto, estos dos t\'erminos siguen las directrices
-de dos organizaciones, Free Software Foundation ~\cite{fsf} y
-Open Source Initiative ~\cite{opensource} respectivamente.
+de dos organizaciones, Free Software Foundation~\cite{fsf} y
+Open Source Initiative~\cite{opensource} respectivamente.
 
 \begin{figure}[H]
   \centering
@@ -500,7 +543,7 @@ utilizar el t\'ermino Free Open Source Software.
 
 Python es un lenguaje de programaci\'on multiparadigma, al permitir la programaci\'on
 orientada a objetos, declarativa y funcional. Es interpretado, por no requerir
-compilaci\'on, con tipado din\'amico y multiplataforma. ~\cite{python}
+compilaci\'on, con tipado din\'amico y multiplataforma~\cite{python}.
 
 Este lenguaje fue publicado por Guido van Rossum en 1991 en los Pa\'ises Bajos
 como un proyecto de software libre. Actualmente se encuentra bajo una licencia
@@ -525,7 +568,7 @@ y las versiones 1.9 del framework Django que se describir\'a a continuaci\'on.
 \subsection{Django}
 \label{subsec:django}
 
-Django ~\cite{django} es un framework web de alto nivel para el lenguaje de
+Django~\cite{django} es un framework web de alto nivel para el lenguaje de
 programaci\'on Python. Este framework permite el desarrollo r\'apido, limpio y
 estructurado de cualquier aplicaci\'on web sin importar su grado de complejidad.
 Django es al igual que Python es de c\'odigo abierto y cuenta con una licencia BSD.
@@ -564,7 +607,7 @@ informaci\'on requerida en cada caso.
 Para poder utilizar Scancode Toolkit en el proyecto, se tuvo que adaptar el c\'odigo
 para la obtenci\'on de la informaci\'on legal del archivo directamente desde su contenido,
 en lugar de facilitar la localizaci\'on del mismo tal y como se realizaba por defecto
-en el c\'odigo que se puede ver en la plataforma Github. ~\cite{scancode}
+en el c\'odigo que se puede ver en la plataforma Github~\cite{scancode}.
 
 Esta herramienta adem\'as cuenta con otras funcionalidades que no han sido utilizadas
 para realizar el an\'alisis de los archivos en este proyecto. Estas funcionalidades
@@ -575,12 +618,12 @@ son la obtenci\'on del lenguaje en el que est\'an escritos, el n\'umero de linea
 
 Esta librer\'ia Python sirve como interacci\'on de alto nivel con repositorios git.
 
-La interacci\'on de esesta librer\'ia con los repositorios abarca desde la funcionalidad
+La interacci\'on de esta librer\'ia con los repositorios abarca desde la funcionalidad
 de clonar un repositorio a obtener el 'blame' de un fichero dentro del mismo.
 Y precisamente estas dos funcionalidades son las que se han utilizado en este proyecto.
 
 La librer\'ia GitPython es de c\'odigo abierto y esta disponible para su uso y modificaci\'on
-en su repositorio de Github ~\cite{gitpython}.
+en su repositorio de Github~\cite{gitpython}.
 
 \subsection{Pygments}
 \label{subsec:pygments}
@@ -597,7 +640,7 @@ Esta librer\'ia nos sirve por tanto para poder encontrar patrones caracter\'isti
 de un determinado lenguaje dentro del c\'odigo, y de esta forma, determinar en que
 lenguaje est\'a programado un determinado archivo.
 
-Esta diferenciac\'on ser\'a usada en el an\'alisis planteado en este proyecto,
+Esta diferenciaci\'on ser\'a usada en el an\'alisis planteado en este proyecto,
 para determinar cuales son los lenguajes de programaci\'on m\'as utilizados
 en los proyectos FOSS a analizar.
 
@@ -605,7 +648,7 @@ en los proyectos FOSS a analizar.
 \label{sec:database}
 
 Para la realizaci\'on de este proyecto, se realiz\'o una comparativa previa del
-tipo de base de datos que se utilizar\'ia ~\cite{sqlvsnosql}.
+tipo de base de datos que se utilizar\'ia~\cite{sqlvsnosql}.
 
 A la hora de escoger una base de datos adecuada para un proyecto, se pueden
 escoger dos tipos de base de datos, relacional y no relacional.
@@ -661,7 +704,7 @@ mejor al uso que se dar\'a a los datos recogidos.
 \subsection{MySQL}
 \label{subsec:mysql}
 
-MySQL ~\cite{mysql} es un sistema de gesti\'on de bases de datos relacionales multiplataforma,
+MySQL~\cite{mysql} es un sistema de gesti\'on de bases de datos relacionales multiplataforma,
 desarrollado en C y C++ bajo una licencia dual GPL/Licencia Comercial de Oracle
 Corporation y es considerada la base de datos relacional open source m\'as popular del mundo.
 
@@ -692,7 +735,7 @@ de usuario. Esas tecnolog\'ias se pasan a describir en las siguientes secciones.
 \subsection{JavaScript}
 \label{subsec:js}
 
-JavaScript ~\cite{js} es un lenguaje de programaci\'on interpretado, dialecto del estandar
+JavaScript~\cite{js} es un lenguaje de programaci\'on interpretado, dialecto del est\'andar
 ECMAScript y fue desarrollado por Brendan Eich, trabajador de Netscape en 1995.
 Este lenguaje es orientado a objetos, imperativo y con tipado d\'ebil y din\'amico.
 
@@ -712,7 +755,7 @@ lado del cliente, y el que se utiliza en este proyecto.
 \subsubsection*{AngularJS}
 \label{subsec:angularjs}
 
-AngularJS ~\cite{angular} es un framework web abierto de JavaScript, mantenido por Google y que
+AngularJS~\cite{angular} es un framework web abierto de JavaScript, mantenido por Google y que
 permite la creaci\'on de SPA o Single Page Applications.
 
 \begin{figure}[H]
@@ -744,13 +787,13 @@ del mismo.
 \subsubsection*{D3.js}
 \label{subsec:d3}
 
-La librer\'ia de JavaScript D3 ~\cite{d3}, llamada as\'i por las siglas Data-Driven Documents,
+La librer\'ia de JavaScript D3~\cite{d3}, llamada as\'i por las siglas Data-Driven Documents,
 permite producir a partir de datos, gr\'aficos din\'amicos e interactivos mediante SVG.
 
 \begin{figure}[H]
   \centering
   \includegraphics[width=3cm, keepaspectratio]{img/d3-logo}
-\end{figigure}
+\end{figure}
 
 Para este proyecto, utilizaremos D3 con otra librer\'ia basada en d3.js llamada nvd3.js, que permite
 crear de manera sencilla y uniforme, gr\'aficos de distintos tipos y para cualquier
@@ -761,12 +804,12 @@ tipo de datos, que adem\'as se actualizan conforme estos datos vayan cambiando.
 
 Para la realizaci\'on de este proyecto, juegan un papel importante tecnolog\'ias
 como HTML5 o CSS3, que permiten la creaci\'on de una interfaz de usuario llamativa
-y facil para el correcto funcionamiento de la aplicaci\'on web.
+y f\'acil para el correcto funcionamiento de la aplicaci\'on web.
 
 \subsubsection*{HTML5}
 \label{subsec:html5}
 
-HTML5 ~\cite{html5} es un lenguaje de marcado que nos permite realizar plantillas en las que
+HTML5~\cite{html5} es un lenguaje de marcado que nos permite realizar plantillas en las que
 representar nuestra interfaz de usuario.
 
 \begin{figure}[H]
@@ -795,10 +838,10 @@ de las caracter\'isticas deseadas para hacerla m\'as atractiva al usuario.
 \subsection{Bootstrap}
 \label{subsec:bootstrap}
 
-Bootrstrap ~\cite{bootstrap} es un conjunto de herramientas de c\'odigo abierto, desarrollado y mantenido
-por Twitter, que permite hacer nuestra p\'agina HTML/CSS, responsiva. Es decir,
-permitir que esta se adapte al tama\~no del navegador o el dispositivo en que
-esta siendo mostrada.
+Bootstrap~\cite{bootstrap} es un conjunto de herramientas de c\'odigo abierto, desarrollado y mantenido
+por Twitter, que permite hacer nuestra p\'agina HTML/CSS responsiva. Es decir,
+Bootstrap permite que una página web se adapte al tama\~no del navegador o el dispositivo en que
+está siendo mostrada.
 
 \begin{figure}[H]
   \centering
@@ -808,7 +851,7 @@ esta siendo mostrada.
 Esta funcionalidad la otorga el sistema de celdas de Bootstrap que permite una
 mejor maquetaci\'on de nuestra p\'agina web.
 
-En este proyecto, se utiliza Bootrstrap por cuestiones est\'eticas, pero adem\'as por
+En este proyecto se utiliza Bootstrap por cuestiones est\'eticas, pero adem\'as por
 seguir con la filosof\'ia de organizaci\'on y estructurac\'on del c\'odigo que se
 asume al utilizar AngularJS.
 
@@ -829,27 +872,6 @@ y a su equipo un desarrollo m\'as \'agil y productivo.
 Por este motivo y por la funci\'on de backup que estas versiones permiten,
 se ha utilizado este software para registrar cada hito conseguido en el proyecto.
 
-\section{Interacci\'on entre tecnolog\'ias}
-\label{sec:interaction}
-
-Por \'ultimo y para sintetizar, en esta secci\'on explicaremos las interacciones
-entre las tecnolog\'ias anteriormente descritas.
-
-Tal y como se muestra en la figura~\ref{fig:interaction}, al acceder un usuario
-a la p\'agina web y realizar el an\'alisis o la b\'usqueda de ciertos datos, se enviar\'a
-una petici\'on desde el cliente Angular hasta el servidor Django, que tras obtener
-los datos de la base de datos, los devolver\'a en la respuesta al cliente, y este
-actualizar\'a mediante el two way data binding los datos contenidos en los gr\'aficos
-de la librer\'ia D3.
-
-\begin{figure}[H]
-    \centering
-    \includegraphics[width=12cm, keepaspectratio]{img/technologies-interaction}
-    \caption{Interacci\'on entre las distintas tecnolog\'ias}
-    \label{fig:interaction}
-\end{figure}
-
-
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % DISEÑO E IMPLEMENTACIÓN %
@@ -858,7 +880,7 @@ de la librer\'ia D3.
 \cleardoublepage
 \chapter{Dise\~no e implementaci\'on}
 
-En esta secci\'on son se desarrollar\'a el proceso seguido para realizar el dise\~no
+En esta secci\'on se desarrollar\'a el proceso seguido para realizar el dise\~no
 preliminar del proyecto y su implementaci\'on.
 
 Primero se dar\'a una visi\'on general de la arquitectura de la aplicaci\'on para
@@ -872,6 +894,18 @@ el correcto funcionamiento de la aplicaci\'on.
 
 Este proyecto consiste en una aplicaci\'on web Django en la que se mostrar\'an los resultados
 de un an\'alisis producido en el back-end de la aplicaci\'on.
+
+El funcionamiento de la aplicaci\'on se muestra en la figura~\ref{fig:interaction},
+en la que se puede resumir la estructura del proyecto.
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=12cm, keepaspectratio]{img/technologies-interaction}
+    \caption{Interacci\'on entre las distintas tecnolog\'ias}
+    \label{fig:interaction}
+\end{figure}
+
+La aplicaci\'on constar\'a de dos partes, el back-end y el fron-end.
 
 El back-end o lado del servidor ha sido desarrollado en Python mediante el framework
 web Django. En esta parte del c\'odigo se ha desarrollado una API REST que devolver\'a
@@ -887,7 +921,8 @@ o front-end. Este c\'odigo realizar\'a funciones de visualizaci\'on de los datos
 obtenidos. Mediante el framework web AngularJS se realizar\'a una SPA que mostrar\'a
 dos secciones en las que visualizar los datos, una en la que analizar un proyecto
 y otra en la que visualizar las estad\'isticas totales almacenadas en la base de datos,
-adem\'as de poder filtrarlas.
+adem\'as de poder filtrarlas. Los datos se representar\'an mediante gr\'aficos de la
+librer\'ia D3.
 
 Para una mejor comprensi\'on de la aplicaci\'on, se desarrollar\'a en mayor profundidad
 el funcionamiento de la misma en los siguientes apartados.
@@ -937,7 +972,7 @@ Estos recursos son los siguientes:
 
   \item \textbf{/legal}: Al acceder a este recurso, se podr\'an enviar una licencia
   o un copyright por los cual se quieran filtrar los ficheros almacenados en la
-  base de datos, devolviendo en la respuesta todos los fihceros que contengan
+  base de datos, devolviendo en la respuesta todos los ficheros que contengan
   esta informaci\'on legal.
 
 \end{itemize}
@@ -1189,8 +1224,7 @@ mediante distintos formularios, la realizaci\'on de peticiones de datos a la bas
 de datos tal y como se ha explicado anteriormente.
 
 Tras obtener la respuesta a las peticiones, se almacenar\'a en campos del elemento
-\textdollar scope de Angular, permitiendo mediante el Two Way Data Binding mencionado
-anteriormente,
+\textdollar scope de Angular, permitiendo mediante el Two Way Data Binding ya mencionado,
 la actualizaci\'on y representaci\'on de los datos en cada plantilla.
 
 Cabe mencionar, que en el caso de los gr\'aficos de la biblioteca D3 es necesario
@@ -1217,7 +1251,7 @@ un formato JSON. Este formato implica tener una colecci\'on de elementos con una
 clave y un valor asociado a ella.
 
 Este formato permitir\'a una adecuada serializaci\'on desde el servidor al cliente
-para el correcto envio de la respuesta, y que en el front-end no se requiera ning\'un
+para el correcto env\'io de la respuesta, y que en el front-end no se requiera ning\'un
 procesado especial de la respuesta, m\'as que el de un elemento JSON propio de JavaScript,
 y su posterior adaptaci\'on para su representaci\'on.
 
@@ -1273,9 +1307,9 @@ los ficheros con su datos individuales. Esta secci\'on se muestra en la figura~\
   \label{fig:third_row}
 \end{figure}
 
-Para mostrar unos resultados reales, se analizar\'an distintos proyectos populares entre
+Para mostrar unos resultados reales en esta interfaz, se analizar\'an distintos proyectos populares entre
 la comunidad de Free Open Source Software. Entre estos proyectos se han elegido los
-repositorios de herramientas como Docker, Ruby, React, Apache/Storm, Apache/Spark,
+repositorios de herramientas como Docker, Ruby, Swift, React, Apache/Storm, Apache/Spark,
 Scala, Go, etc.
 
 \section{Informaci\'on general}
@@ -1331,7 +1365,7 @@ y framework web respectivamente.
 
 Estas dos herramientas difieren en su funcionalidad, pero no tanto en sus caracter\'isticas Free Open Source.
 Ambos proyectos usan en la pr\'actica la licencia BSD-Modified mayoritariamente, como se muestra en las
-figuras~\ref{fig:angular_license} y ~\ref{fig:docker_license}. Ya que aunque AngularJS presenta un 60% de sus archivos licenciados
+figuras~\ref{fig:angular_license} y~\ref{fig:docker_license}. Ya que aunque AngularJS presenta un 60% de sus archivos licenciados
 bajo la licencia MIT, al ser esta una licencia muy permisiva, y permitir ser incorporada bajo otras licencias,
 en Angular se hace uso de la licencia BSD la cual es m\'as restrictiva que la MIT License.
 
@@ -1458,8 +1492,6 @@ el software o sobre las secciones de software en las cuales colabor\'o.
 Este tipo de licencias est\'an proliferando m\'as \'ultimamente, para ayudar a grandes empresas como Apple o Google,
 a sentirse m\'as c\'omodas al hacer que su software pertenezca a la comunidad Free Open Source.
 
-%http://blog.gerv.net/2013/02/an-introduction-to-modern-open-source-licence-patent-clauses/
-
 \subsection{Herramientas de Big Data}
 \label{subsec: big_data}
 
@@ -1469,7 +1501,7 @@ desarrollo software llamado Big Data y se utilizan para el procesado de grandes 
 aprendizaje m\'aquina, etc.
 
 Al ser Big Data un tema muy actual, estas herramientas contienen, adem\'as de por pertenecer a la Apache Software
-Foundation, licencias Apache 2.0 en la gran mayoria de su c\'odigo. Esto aplica a estos proyectos el derecho
+Foundation, licencias Apache 2.0 en la gran mayor\'ia de su c\'odigo. Esto aplica a estos proyectos el derecho
 de patente para todos sus colaboradores.
 
 Por otro lado, si analizamos los lenguajes utilizados en estos dos proyectos, comprobamos
@@ -1514,11 +1546,11 @@ proyectos de software, ya sea para empresas con \'animo de lucro o desarrollador
 se basa en la comunidad, en la reutilizaci\'on de herramientas y en el intercambio de conocimientos para alcanzar los
 objetivos marcados en cada proyecto.
 
-Al analizar los proyectos anteriormente mencionados se ha obtenido una mejor visi\'on de las libertades que proporciona
+Al analizar los proyectos mencionados en la secci\'on \ref{sec:specific_info} se ha obtenido una mejor visi\'on de las libertades que proporciona
 el software libre y los matices que existen dentro del mismo, porque aunque todo el software analizado sea
 libre, las diferentes licencias analizadas, otorgan ciertas cualidades diferentes a cada proyecto.
 
-La principal cualidad diferenciada entre las licencias es el uso del derecho de patente. Este derecho, como ya se ha
+La principal cualidad diferenciada entre las licencias es el uso del derecho de patente~\cite{licencias}. Este derecho, como ya se ha
 explicado anteriormente, impide al desarrollador apropiarse de un proyecto determinado mediante acciones legales,
 dando as\'i una cualidad importante a los nuevos proyectos de software libre que har\'an que este sector se desarrolle
 a\'un m\'as y que empresas de software propietario o que busquen lucrarse del software que producen, como pueden ser
@@ -1531,8 +1563,8 @@ beneficiar usuarios, empresas y desarrolladores por igual.
 \subsection*{Software propietario}
 \label{subsec:propietary_sw}
 
-En el caso de Apple como ya se ha mencionado anteriormente, se ha comenzado a trabajar en proyectos de software libre
-como Swift que pretende sustituir el anterior y actual lenguaje de programaci\'on, Objective-C. El principal problema
+En el caso de Apple, como ya se ha mencionado, se ha comenzado a trabajar en proyectos de software libre
+como Swift, que pretende sustituir a Objective-C. El principal problema
 de este lenguaje de programaci\'on es la falta de interacci\'on con los desarrolladores que lo utilizan.
 Por esta raz\'on Swift en sus \'ultimas versiones decidi\'o desarrollarse de manera abierta y libre, para que la interacci\'on
 de los distintos contribuidores permitiera desarrollar el lenguaje y hacer que aumente en popularidad y facilidad de uso,
@@ -1556,59 +1588,152 @@ y promueve adem\'as la creaci\'on de nuevas herramientas que satisfagan nuevas n
 \chapter{Conclusiones}
 \label{chap:conclusiones}
 
+En esta secci\'on se determinar\'an los determinaciones finales que se extraen de
+la finalizaci\'on de este proyecto, valorando el cumplimiento de los objetivos
+puestos inicialmente y las lecciones aprendidas mediante su realizaci\'on y el
+proceso de investigaci\'on.
 
 \section{Consecuci\'on de objetivos}
 \label{sec:consecucion-objetivos}
 
-Esta secci\'on es la secci\'on espejo de las dos primeras del cap\'itulo de objetivos,
-donde se planteaba el objetivo general y se elaboraban los espec\'ificos.
+Tras la finalizaci\'on del proyecto, se puede determinar que todos los objetivos
+previamente fijados han sido realizados con \'exito y que por tanto se ha alcanzado
+satisfactoriamente el objetivo principal de realizar el an\'alisis de distintos
+proyectos FOSS para su posterior an\'alisis y comprensi\'on de los datos obtenidos como
+se ha realizado en la secci\'on~\ref{sec:consecuencias}.
 
-Es aqu\'i donde hay que debatir qu\'e se ha conseguido y qu\'e no. Cuando algo no
-se ha conseguido, se ha de justificar, en t\'erminos de qu\'e problemas se han
-encontrado y qu\'e medidas se han tomado para mitigar esos problemas.
+A continuaci\'on se enumerar\'an los resultados obtenidos para cada objetivo enumerado en
+el cap\'itulo~\ref{chap:objetivos}:
 
+\begin{itemize}
+
+\item Se consigui\'o utilizar la herramienta Scancode Toolkit para analizar distintos
+proyectos que sirivieran de ejemplo para los datos a almacenar en la base de datos.
+
+\item Se consigui\'o establecer la estructura de una aplicaci\'on Django con modelos
+que permitieran realizar la posterior interfaz con la base de datos.
+
+\item Se incluy\'o la herramienta Scancode Toolkit en el c\'odigo presente dentro del
+proyecto Angular, para poder almacenar de manera m\'as adecuada los datos obtenidos
+del an\'alisis.
+
+\item Se desarroll\'o una API REST que interact\'ua con la herramienta Scancode Toolkit
+y la API de Github para devolver en formato JSON los datos correspondientes en cada
+proyecto.
+
+\item Se almacenaron distintos proyectos de importancia dentro del entono Open Source
+para que su an\'alisis pudiera servir para comprender mejor su ecosistema.
+
+\item Se realiz\'o la estrcutura Angular en el lado del cliente de la aplicaci\'on,
+incluyendo en ella distintas directivas para permitir la representaci\'on de los datos
+mediante gr\'aficos de la librer\'ia nvd3.js.
+
+\end{itemize}
+
+Es necesario mencionar tambi\'en que aunque el funcionamiento del analizador de
+proyectos funciona adecuadamente, es necesario que se mejore su rendimiento en
+trabajos futuros. Se trat\'o de analizar proyectos como el repositorio de Linux,
+pero por su tama\~no, el analizador tardaba demasiado, lo que produc\'ia que en el
+momento de almacenar el proyecto en la base de datos, el servidor de MySQL se hubiera
+cerrado.
 
 \section{Aplicaci\'on de lo aprendido}
 \label{sec:aplicacion}
 
-Aqu\'i viene lo que has aprendido durante el Grado/M\'aster y que has aplicado
-en el TFG/TFM. Una buena idea es poner las asignaturas m\'as relacionadas y
-comentar en un p\'arrafo los conocimientos y habilidades puestos en pr�ctica.
+Para poder enumerar los conociemientos obtenidos en la carrera y que se han puesto
+en pr\'actica en este proyecto, se enumerar\'a cada asignatura y los conocimientos
+aplicados que se aprendieron en dicha asignatura.
 
 \begin{enumerate}
-  \item a
-  \item b
-\end{enumerate}
+  \item \textbf{Servicios y Aplicaciones Telem\'aticas}: El desarrollo de aplicaciones
+  web mediante el framework web Django.
 
+  \item \textbf{Ingenier\'ia de Sistemas de Informaci\'on}: La realizaci\'on y planteamiento
+  de proyectos de software y la utilizaci\'on y comprensi\'on de las bases de datos.
+
+  \item \textbf{Desarrollo de Aplicaciones Telem\'aticas}: La implementaci\'on de
+  interfaces de usuario con cierto nivel de complejidad tanto visual como funcional.
+
+  \item \textbf{Sistemas Operativos}: Aplicaci\'on de programaci\'on concurrente
+  y la compresi\'on de procesos de sistemas operativos.
+
+  \item \textbf{Ingenier\'ia de Sistemas Telem\'aticos}: Aplicaci\'on de programaci\'on
+  orientada a objetos.
+\end{enumerate}
 
 \section{Lecciones aprendidas}
 \label{sec:lecciones_aprendidas}
 
-Aqu\'i viene lo que has aprendido en el Trabajo Fin de Grado/M\'aster.
+Adem\'as de lo estudiado en la carrera, este proyecto me ha permitido aprender
+acerca de los siguientes temas:
 
 \begin{enumerate}
-  \item a
-  \item b
+  \item Plantear proyectos de ingenier\'ia desde cero, y adaptar y documentar el proceso de
+  desarrollo en funci\'on de los avances conseguidos.
+
+  \item Investigar y comparar las distintas herramientas presentes para realizar
+  una determinada tarea y escoger aquella que aporte los mayores beneficios al proyecto.
+
+  \item Analizar el funcionamiento del software para mejorar su implementaci\'on y
+  el rendimiento que genera, adem\'as de la utilizaci\'on de herramientas de profiling
+  para determinar mediante datos num\'ericos, la eficiencia del c\'odigo.
+
+  \item Desarrollar todo el stack de una aplicaci\'on web, y a estructurar adecuadamente
+  el c\'odigo tanto en el cliente como en el servidor.
+
+  \item Desarrollar software que permita atajar problemas de la vida real, analizando
+  datos presentes en la red.
+
+  \item Conocer y obtener una visi\'on m\'as profunda de los proyectos de software libre
+  adem\'as de concienciarse del entorno de comunidad que encontramos en estos proyectos.
 \end{enumerate}
 
+En definitiva, este proyecto me ayud\'o a sentar las bases de un buen ingeniero, de manera que
+pude utilizar mis habilidades para resolver los problemas que fui encontrando durante
+el desarrollo de este proyecto.
 
 \section{Trabajos futuros}
 \label{sec:trabajos_futuros}
 
-Ning\'un software se termina, as\'i que aqu\'i vienen ideas y funcionalidades
-que estar\'ia bien tener implementadas en el futuro.
+Aunque los objetivos planteados en este proyecto se han completado, ning\'un
+proyecto software llega a cumplir a la perfecci\'on las ideas preliminares que se
+tienen sobre \'el.
 
-Es un apartado que sirve para dar ideas de cara a futuros TFGs/TFMs.
+Este proyecto se centr\'o en el an\'alisis de proyectos concretos que puedan ser
+un buen ejemplo de las caracter\'isticas generales de los proyectos de software abierto
+y libre, sin embargo, ser\'ia una buena mejora si se realizara un an\'alisis masivo
+de un mayor n\'umero de proyectos y que obtengan un mayor n\'umero de datos diferentes.
 
+Esta mejora supondr\'ia la utilizaci\'on de metodolog\'ias de Big Data para el filtrado
+de los datos y la obtenci\'on de los datos determinantes para nuestro an\'alisis,
+poblando la base de datos con informaci\'on relevante para el an\'alisis deseado.
+
+Adem\'as, para mejorar el funcionamiento del an\'alisis y la obtenci\'on de los datos
+se deber\'ian aplicar t\'ecnicas de computaci\'on de alto rendimiento para que
+el procesado de proyectos de grandes dimensiones no suponga un tiempo de an\'alisis
+demasiado alto.
 
 \section{Valoraci\'on personal}
 \label{sec:valoracion}
 
-Finalmente (y de manera opcional), hay gente que se anima a dar su punto de
-vista sobre el proyecto, lo que ha aprendido, lo que le gustar\'ia haber aprendido,
-las tecnolog\'ias utilizadas y dem\'as.
+El hecho de que este proyecto se centrara en el software libre y la posibilidad
+de analizar proyectos importantes que se usan comunmente a la hora de desarrollar cualquier
+proyecto software, incluyendo algunas de las que he utilizado en la carrera y en mi tiempo
+libre, supuso un aliciente para m\'i a la hora de escoger este proyecto.
 
+Las ideas y libertades que representa el software libre, representan en mi opini\'on
+unos ideales que deber\'ian promoverse y darse a conocer, ya que todo el mundo deber\'ia
+tener derecho a cualquier tipo de software ya que nadie puede ser due\~no o ideador
+absoluto de un determinado software, ya que en su gran mayor\'ia, todos estos proyectos
+se derivan de otros desarrollados en el pasado y que permitieron sentar las bases de lo que
+se esta desarrollando ahora, as\'i como los actuales proyectos sentar\'an las bases
+de los proyectos del futuro.
 
+Por esta raz\'on se deber\'ia tener una mentalidad global a la hora de desarrollar
+software, y esta es la finalidad intr\'inseca de este proyecto, mentalizar y mostrar
+a los posibles lectores de esta memoria, los beneficios que supone para todos los
+elementos del entorno de desarrollo de software, ya sean programadores, empresas o usuarios,
+el uso y promoci\'on del Free Open Source Software.
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -1620,6 +1745,87 @@ las tecnolog\'ias utilizadas y dem\'as.
 \chapter{Manual de usuario}
 \label{app:manual}
 
+Para poder desarrollar este pryecto se tuvo que utilizar Django,
+que se puede instalar con el siguiente comando.
+
+\begin{lstlisting}[language=bash]
+  $ pip install -e django
+\end{lstlisting}
+
+Posteriormente, se inicializ\'o un proyecto y aplicaci\'on Django escribiendo en la
+terminal, los siguientes comandos:
+
+\begin{lstlisting}[language=bash]
+  $ django-admin startproject mysite
+  $ python manage.py startapp myapp
+\end{lstlisting}
+
+Posteriormente para arrancar la aplicaci\'on y ver el resultado se utilizar\'a
+el siguiente comando.
+
+\begin{lstlisting}[language=bash]
+  $ python manage.py runserver
+\end{lstlisting}
+
+Y adem\'as, para poder migrar los cambios realizados sobre los modelos a la base
+de datos, se aplicar\'an los siguientes comandos de manera consecutiva.
+
+\begin{lstlisting}[language=bash]
+  $ python manage.py makemigrations
+  $ python manage.py migrate
+\end{lstlisting}
+
+Adem\'as de Django, se utilizaron librer\'ias python externas cuya instalaci\'on
+se realiz\'o mediante los siguientes comandos:
+
+\begin{lstlisting}[language=bash]
+  $ pip install pygments
+  $ pip install gitpython
+\end{lstlisting}
+
+Tambi\'en, se tuvo que modificar el archivo settings.py del proyecto Django,
+para utilizar un tipo de base de datos MySQL, a\~nadiendo esta l\'inea.
+
+\begin{lstlisting}[language=python]
+  DATABASES = {
+      'default': {
+            'ENGINE': 'django.db.backends.mysql',
+            ...
+      }
+  }
+\end{lstlisting}
+
+Por \'utlimo, estos son los repositorios Github de la herramienta Scancode Toolkit
+y de este proyecto.
+
+\begin{lstlisting}[language=bash]
+  https://github.com/nexB/scancode-toolkit
+  https://github.com/jperaltar/FOSS_Analysis
+\end{lstlisting}
+
+\chapter{Planificaci\'on temporal}
+\label{app:planificacion}
+
+En esta tabla se muestra la planifiaci\'on temporal general del proceso de
+realizaci\'on del proyecto.
+
+\begin{figure}[H]
+	\centering
+	\includegraphics[width=16cm, keepaspectratio]{img/planificacion}
+\end{figure}
+
+En general se siguieron los tiempos marcados aunque por diversos imprevistos,
+en ocasiones se tuvo que usar parte del tiempo especificado en cada semana para
+la realizaci\'on de cada tarea, en la correcci\'on o mejora de distintas secciones
+del proyecto.
+
+Adem\'as, esta tabla incluye \'unicamente el periodo de tiempo en desde que se
+comenz\'o a desarrollar el proyecto hasta el momento de su finalizaci\'on.
+El proceso inicial de planteamiento del problema y la elecci\'on del enfoque
+que se iba a tomar para definir el objetivo final y secundario del problema, tuvo
+lugar durante todo el a\~no anterior a la iniciaci\'on, justo desde el momento en
+que se comenz\'o a plantear la realizaci\'on de este proyecto, con el Profesor
+Gregorio Robles Mart\'inez.
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
